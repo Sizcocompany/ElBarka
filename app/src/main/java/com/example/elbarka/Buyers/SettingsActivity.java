@@ -88,7 +88,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(checker.equals("Clicked")){
+                if(checker.equals("clicked")){
 
                     // that means customer pressed on change pic btn and chnage his profile pic then add other data
                     userInfoSavedWithImage();
@@ -107,7 +107,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                checker = "Clicked" ;
+                checker = "clicked" ;
 
                 CropImage.activity(imageUri)
                         .setAspectRatio( 1, 1 )
@@ -155,7 +155,7 @@ public class SettingsActivity extends AppCompatActivity {
         }else if(TextUtils.isEmpty( addressEditeText.getText().toString() )){
 
             Toast.makeText( this, "Address is Mandatory", Toast.LENGTH_SHORT ).show();
-        }else if(checker.equals( "Clicked" )){
+        }else if(checker.equals( "clicked" )){
 
             uploadImage();
         }
