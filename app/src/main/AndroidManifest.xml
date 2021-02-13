@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.elbarka">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ElBarka"
+        tools:replace="android:theme">
+        <activity android:name=".Admin.AdminCheckApproveNewProductActivity"></activity>
+        <activity android:name=".Admin.AdminHomeActivity" />
+        <activity android:name=".Buyers.ForgetPasswordActivity" />
+        <activity android:name=".Admin.AdminMaintainProductsActivity" />
+        <activity android:name=".Buyers.SearchProductsActivity" />
+        <activity android:name=".Admin.AdmineUserProductsActivity" />
+        <activity android:name=".Admin.AdminNewOrdersActivity" />
+        <activity android:name=".Buyers.ConfirmFinalOrderActivity" />
+        <activity android:name=".Buyers.CartActivity" />
+        <activity android:name=".Buyers.ProductdetailsActivity" />
+        <activity android:name=".Buyers.SettingsActivity" />
+        <activity android:name=".Admin.AdminCategoryActivity" />
+        <activity android:name=".Admin.AdminAddNewProductActivity" />
+        <activity android:name=".Buyers.Register_Activity" />
+        <activity android:name=".Buyers.LoginActivity" />
+        <activity android:name=".Buyers.MainActivity"/>
+
+        <activity android:name=".Buyers.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Buyers.Home2Activity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ElBarka.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        </application>
+
+</manifest>

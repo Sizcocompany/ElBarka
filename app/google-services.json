@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "410859850503",
+    "project_id": "elbarka-61e97",
+    "storage_bucket": "elbarka-61e97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410859850503:android:d6e23f7bac95294bcb53a2",
+        "android_client_info": {
+          "package_name": "com.example.elbarka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410859850503-1kuv4uotprd5nf1a0pbq7is0j5cokuj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC99qfrEQF3gxfM90L_WjG3FvSgbwFYiLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410859850503-1kuv4uotprd5nf1a0pbq7is0j5cokuj9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
