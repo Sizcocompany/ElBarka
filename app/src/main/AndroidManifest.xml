@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ElBarka"
+        android:theme="@style/Theme.ElBarka.NoActionBar"
         tools:replace="android:theme">
         <activity android:name=".Admin.AdminCheckApproveNewProductActivity"></activity>
         <activity android:name=".Admin.AdminHomeActivity" />

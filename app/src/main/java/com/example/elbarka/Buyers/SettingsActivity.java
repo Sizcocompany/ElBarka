@@ -66,6 +66,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         userInfoDisplay(profileImageView , fullNameEditeText , userPhoneEditeText , addressEditeText);
 
+        fullNameEditeText.setText(Prevalent.currentOnlineUsers.getName());
+        userPhoneEditeText.setText(Prevalent.currentOnlineUsers.getPhone());
+        addressEditeText.setText(Prevalent.currentOnlineUsers.getAddress());
+
+
         closeBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
