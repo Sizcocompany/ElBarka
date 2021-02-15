@@ -19,7 +19,7 @@
         android:layout_below="@+id/product_image_details"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Product name "
+        android:text="@string/product_name"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold" />
@@ -31,7 +31,7 @@
         android:layout_below="@+id/seller_product_name_details"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Product Description "
+        android:text="@string/product_description"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold" />
@@ -43,7 +43,7 @@
         android:layout_below="@+id/product_description_details"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Product Price "
+        android:text="@string/product_price"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold" />
@@ -54,14 +54,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_price_details"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="11dp"
         android:elevation="6dp"
         app:backGroundColor="@color/purple_500"
         app:finalNumber="10"
         app:initialNumber="1"
         app:textColor="@color/black"
-        app:textSize="16sp"
-        >
+        app:textSize="16sp">
 
     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
@@ -71,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="15dp"
-        android:text="Add to chart"
+        android:text="@string/add_to_cart"
         android:textAllCaps="false"
         android:background="@color/purple_500"
         android:textColor="@color/white"

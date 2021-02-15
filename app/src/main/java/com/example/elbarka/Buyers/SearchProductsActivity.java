@@ -78,7 +78,7 @@ public class SearchProductsActivity extends AppCompatActivity {
 
                         productViewHolder.txtProductName.setText(products.getpName());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText("Price = " + products.getPrice() + "$");
+                        productViewHolder.txtProductPrice.setText(R.string.price + products.getPrice() + "$");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
 
                         productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {

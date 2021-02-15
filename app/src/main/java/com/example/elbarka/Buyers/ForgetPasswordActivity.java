@@ -62,11 +62,11 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         if(check.equals("settings"))
         {
 
-            pageTitle.setText("Set Questions ");
+            pageTitle.setText(R.string.set_questions);
 
-            titleQuestions.setText("Please set Answers the following security questions");
+            titleQuestions.setText(R.string.please_set_answers_the_following_security_questions);
 
-            verify_Btn.setText("Set");
+            verify_Btn.setText(R.string.set);
 
             // we create this method to check if customer have pervoius answer or not
             // if yes we will set answers on question edit text to be shown to customer before edit it
@@ -109,7 +109,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         if(question_1.equals("") && question_2.equals("")){
 
-            Toast.makeText(ForgetPasswordActivity.this, "Please answer all questions", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ForgetPasswordActivity.this, R.string.please_answer_all_questions, Toast.LENGTH_SHORT).show();
         }else {
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference()
@@ -126,7 +126,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                     if(task.isSuccessful()){
 
-                        Toast.makeText(ForgetPasswordActivity.this, "Answers have set security questions  successfully  ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgetPasswordActivity.this, R.string.answers_have_set_security_questions_successfully, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(ForgetPasswordActivity.this , Home2Activity.class);
                         startActivity(intent);
                     }
@@ -193,15 +193,15 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                             if (!ans1.equals(answer1)) {
 
-                                Toast.makeText(ForgetPasswordActivity.this, "Your 1st answer wrong ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgetPasswordActivity.this, R.string.your_1st_answer_wrong, Toast.LENGTH_SHORT).show();
                             } else if (!ans2.equals(answer2)) {
 
-                                Toast.makeText(ForgetPasswordActivity.this, "Your 2nd answer wrong ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgetPasswordActivity.this, R.string.your_2nd_answer_wrong, Toast.LENGTH_SHORT).show();
 
                             } else {
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(ForgetPasswordActivity.this);
-                                builder.setTitle("New Password");
+                                builder.setTitle(R.string.new_password);
 
                                 final EditText newPassword = new EditText(ForgetPasswordActivity.this);
                                 newPassword.setHint("Write new password here ...");
@@ -224,10 +224,10 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                                                                 startActivity(intent);
                                                                 dialog.dismiss();
 
-                                                                Toast.makeText(ForgetPasswordActivity.this, "Password change sucssfully ", Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(ForgetPasswordActivity.this, R.string.password_change_sucssfully, Toast.LENGTH_SHORT).show();
                                                             } else {
 
-                                                                Toast.makeText(ForgetPasswordActivity.this, "Please try again later ", Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(ForgetPasswordActivity.this, R.string.please_try_again_later, Toast.LENGTH_SHORT).show();
                                                             }
                                                         }
                                                     });
@@ -235,7 +235,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                                         } else {
 
-                                            Toast.makeText(ForgetPasswordActivity.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ForgetPasswordActivity.this, R.string.please_enter_password, Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
@@ -251,12 +251,12 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                             }
                         }else {
-                            Toast.makeText(ForgetPasswordActivity.this, "You have not answer seciurty questions..  ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgetPasswordActivity.this, R.string.you_have_not_answer_seciurty_questions, Toast.LENGTH_SHORT).show();
 
                         }
 
                     } else {
-                        Toast.makeText(ForgetPasswordActivity.this, "This phone not exist ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgetPasswordActivity.this, R.string.this_phone_not_exist, Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -271,7 +271,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText(this, "Please complete the form..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_complete_the_form, Toast.LENGTH_SHORT).show();
         }
 
 

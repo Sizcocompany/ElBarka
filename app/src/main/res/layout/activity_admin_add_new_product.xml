@@ -26,7 +26,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:hint="Product Name..."
+        android:hint="@string/product_name"
         android:background="@drawable/input_design"
         android:inputType="textMultiLine"
         />
@@ -40,7 +40,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:hint="Description..."
+        android:hint="@string/product_description"
         android:background="@drawable/input_design"
         android:inputType="textMultiLine"
         />
@@ -54,7 +54,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:hint="price..."
+        android:hint="@string/product_price"
         android:background="@drawable/input_design"
         android:inputType="textMultiLine"
         />
@@ -69,7 +69,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="45dp"
         android:layout_marginLeft="45dp"
-        android:text="Add New Product "
+        android:text="@string/add_new_product"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textColor="@android:color/white"

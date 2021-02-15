@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         adminLink.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginBtn.setText( "Login Admin" );
+                loginBtn.setText( R.string.login_admin );
                 adminLink.setVisibility( View.INVISIBLE );
                 notAdminLink.setVisibility( View.VISIBLE );
                 userDbName = "Admins";
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         notAdminLink.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginBtn.setText( "Login" );
+                loginBtn.setText( R.string.login );
                 adminLink.setVisibility( View.VISIBLE );
                 notAdminLink.setVisibility( View.INVISIBLE );
                 userDbName = "Users";
@@ -102,14 +102,14 @@ public class LoginActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty( phone ))
         {
-            Toast.makeText( this, "Please Enter Phone ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_enter_phone, Toast.LENGTH_SHORT ).show();
         }else if (TextUtils.isEmpty( password ))
         {
-            Toast.makeText( this, "Please Enter Password", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_enter_password, Toast.LENGTH_SHORT ).show();
         }else {
 
-            loadingBar.setTitle( "Login Account" );
-            loadingBar.setMessage( " Please Wait , while check credantials ... " );
+            loadingBar.setTitle( R.string.login_account );
+            loadingBar.setMessage(this.getResources().getString(R.string.please_wait_while_check_credantials) );
             loadingBar.setCanceledOnTouchOutside( false );
             loadingBar.show();
 
@@ -151,12 +151,13 @@ public class LoginActivity extends AppCompatActivity {
                         if (userData.getPassword().equals( password )) {
 
                             if (userDbName.equals( "Admins" )) {
-                                Toast.makeText( LoginActivity.this, "welcome Admin you are Logged in Successfully  ... ", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText( LoginActivity.this, R.string.welcome_admin_you_are_logged_in_successfully, Toast.LENGTH_SHORT ).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent( LoginActivity.this, AdminCategoryActivity.class );
                                 startActivity( intent );
+
                             } else if (userDbName.equals( "Users" )) {
-                                Toast.makeText( LoginActivity.this, "Logged in Successfully ... ", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText( LoginActivity.this, R.string.Logged_in_successfully, Toast.LENGTH_SHORT ).show();
 
                                 loadingBar.dismiss();
                                 Intent intent = new Intent( LoginActivity.this, Home2Activity.class );
@@ -167,14 +168,14 @@ public class LoginActivity extends AppCompatActivity {
 
                         } else {
 
-                            Toast.makeText( LoginActivity.this, "incorrect password", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( LoginActivity.this, R.string.incorrect_password, Toast.LENGTH_SHORT ).show();
                             loadingBar.dismiss();
                         }
                     }
 
                 } else {
 
-                    Toast.makeText( LoginActivity.this, "Account with " + phone + " not exists ", Toast.LENGTH_SHORT ).show();
+                    Toast.makeText( LoginActivity.this, R.string.account_with + phone + " not exists ", Toast.LENGTH_SHORT ).show();
                     loadingBar.dismiss();
                 }
             }
@@ -185,4 +186,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         } );
     }
-    }
+
+
+}

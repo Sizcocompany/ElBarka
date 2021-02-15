@@ -62,7 +62,7 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
                         holder.txtProductName.setText(model.getpName());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                        holder.txtProductPrice.setText(R.string.price+ model.getPrice() + "$");
                         Picasso.get().load(model.getImage()).into(holder.imageViewProduct);
 
                         // now when admin press on this item we will have dialog to approve or reject this order
@@ -83,7 +83,7 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
                                      "No"
                              };
                              AlertDialog.Builder builder = new AlertDialog.Builder(AdminCheckApproveNewProductActivity.this);
-                             builder.setTitle("DO you want to approve this Product");
+                             builder.setTitle(R.string.do_you_want_to_approve_this_product);
                              builder.setItems(options, new DialogInterface.OnClickListener() {
                                  @Override
                                  public void onClick(DialogInterface dialog, int position) {
@@ -132,11 +132,11 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()){
 
-                    Toast.makeText(AdminCheckApproveNewProductActivity.this, "Product approved Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminCheckApproveNewProductActivity.this, R.string.product_approved_successfully, Toast.LENGTH_SHORT).show();
 
                 }else {
 
-                    Toast.makeText(AdminCheckApproveNewProductActivity.this, "Please try again later ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminCheckApproveNewProductActivity.this, R.string.please_try_again_later, Toast.LENGTH_SHORT).show();
                 }
 
             }

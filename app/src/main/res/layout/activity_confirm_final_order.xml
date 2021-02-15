@@ -10,13 +10,13 @@
         android:id="@+id/txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please write your shipment Details"
+        android:text="@string/please_write_your_shipment_details"
         android:textStyle="bold"
         android:textSize="17sp"
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:layout_margin="25dp"
-        />
+        android:gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/shapment_name"
@@ -26,7 +26,7 @@
         android:layout_below="@+id/txt"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Please enter your name"
+        android:hint="@string/please_enter_your_full_name"
         />
 
     <EditText
@@ -37,7 +37,7 @@
         android:layout_below="@+id/shapment_name"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Please enter your phone"
+        android:hint="@string/please_enter_user_phone"
         android:inputType="number"
         />
 
@@ -49,7 +49,7 @@
         android:layout_below="@+id/shapment_phoneNumber"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Please enter your Home Address"
+        android:hint="@string/please_enter_your_address"
         />
 
     <EditText
@@ -60,7 +60,7 @@
         android:layout_below="@+id/shapment_Address"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:hint="Please enter your City name"
+        android:hint="@string/please_enter_your_city"
         />
 
     <Button
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Confirm"
+        android:text="@string/confirm"
         android:textAllCaps="false"
         android:layout_margin="20dp"
         android:background="@color/colorPrimaryDark"

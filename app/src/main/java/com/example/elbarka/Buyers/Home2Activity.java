@@ -1,5 +1,6 @@
 package com.example.elbarka.Buyers;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -23,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.elbarka.Admin.AdminCategoryActivity;
 import com.example.elbarka.Admin.AdminMaintainProductsActivity;
 import com.example.elbarka.Model.Products;
 import com.example.elbarka.Prevalent.Prevalent;
@@ -68,7 +71,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         Paper.init(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Home");
+        toolbar.setTitle(R.string.home);
         setSupportActionBar(toolbar);
 
 
@@ -226,7 +229,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
                         productViewHolder.txtProductName.setText(products.getpName());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText("Price = " + products.getPrice() + "$");
+                        productViewHolder.txtProductPrice.setText(R.string.total_price + products.getPrice() + "$");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
 
                         productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -241,15 +244,14 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
                                     startActivity(intent);
 
 
+                                } else {
+
+                                    Intent intent = new Intent(Home2Activity.this, ProductdetailsActivity.class);
+                                    //to get spacific product ID inorder to view it
+                                    intent.putExtra("pid", products.getPid());
+
+                                    startActivity(intent);
                                 }
-                              else {
-
-                                  Intent intent =new Intent(Home2Activity.this , ProductdetailsActivity.class);
-                                  //to get spacific product ID inorder to view it
-                                  intent.putExtra("pid" , products.getPid());
-
-                                  startActivity(intent);
-                              }
 
                             }
                         });
@@ -274,8 +276,23 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (type.equals("Admin")) {
+            Intent intent = new Intent(Home2Activity.this, AdminCategoryActivity.class);
+            startActivity(intent);
+            finish();
         } else {
-            super.onBackPressed();
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.really_exit)
+                    .setMessage(this.getResources().getString(R.string.are_you_sure_you_want_to_exit))
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            setResult(RESULT_OK, new Intent().putExtra("EXIT", true));
+                            finish();
+                        }
+
+                    }).create().show();
         }
     }
 
@@ -283,6 +300,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
 }
 
 

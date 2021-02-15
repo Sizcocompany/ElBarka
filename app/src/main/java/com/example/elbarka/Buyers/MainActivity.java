@@ -44,6 +44,24 @@ public class MainActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
 
 
+        String userPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
+        String userPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
+
+
+
+        if (userPhoneKey != "" && userPasswordKey != "") {
+            if (!TextUtils.isEmpty(userPhoneKey) && !TextUtils.isEmpty(userPasswordKey)) {
+
+                allowAccessToAccount(userPhoneKey, userPasswordKey);
+
+                loadingBar.setTitle(R.string.already_logged_in);
+                loadingBar.setMessage(this.getResources().getString(R.string.please_wait));
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
+            }
+        }
+
+
         login_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,20 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        String userPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
-        String userPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
 
-        if (userPhoneKey != "" && userPasswordKey != "") {
-            if (!TextUtils.isEmpty(userPhoneKey) && !TextUtils.isEmpty(userPasswordKey)) {
-
-                allowAccessToAccount(userPhoneKey, userPasswordKey);
-
-                loadingBar.setTitle("Already logged in");
-                loadingBar.setMessage("Please Wait ");
-                loadingBar.setCanceledOnTouchOutside(false);
-                loadingBar.show();
-            }
-        }
     }
 
     @Override
@@ -111,15 +116,16 @@ public class MainActivity extends AppCompatActivity {
 
                         if (userData.getPassword().equals(password)) {
 
-                            Toast.makeText(MainActivity.this, "You are already logged in User  ... ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.you_are_already_logged, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, Home2Activity.class);
                             Prevalent.currentOnlineUsers = userData;
                             startActivity(intent);
+                            finish();
                         } else {
 
-                            Toast.makeText(MainActivity.this, "incorrect  password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.incorrect_password, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                         }
                     }
@@ -131,22 +137,23 @@ public class MainActivity extends AppCompatActivity {
 
                         if (adminData.getPassword().equals(password)) {
 
-                            Toast.makeText(MainActivity.this, "You are already logged in Admin  ... ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.you_are_already_logged, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
                             Prevalent.currentOnlineUsers = adminData;
                             startActivity(intent);
+                            finish();
                         } else  {
 
-                            Toast.makeText(MainActivity.this, "incorrect admin password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.incorrect_password, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                         }
                     }
 
                 }else {
 
-                    Toast.makeText(MainActivity.this, "Account with " + phone + " not exists ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.account_with + phone + R.string.not_exists, Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }
@@ -156,5 +163,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

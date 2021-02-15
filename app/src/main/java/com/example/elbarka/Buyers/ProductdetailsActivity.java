@@ -53,6 +53,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
         addTocartBtn = findViewById(R.id.pd_add_cart_Btn);
         numberButton = findViewById(R.id.number_btn);
 
+
         // retrive spasific product by product ID
         getProductDetails (productID);
 
@@ -64,7 +65,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
 
                 if(state.equals("Order placed") || state.equals("Order shipped")){
 
-                    Toast.makeText(ProductdetailsActivity.this, "you can purchase new order once your order shipped or confirmed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductdetailsActivity.this, R.string.you_can_purchase_new_order_once_your_order_shipped_or_confirmed, Toast.LENGTH_SHORT).show();
 
                 }else {
                     // TO ADD PRODUCT TO CART
@@ -125,7 +126,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    Toast.makeText(ProductdetailsActivity.this, "Add to the Cart List", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ProductdetailsActivity.this, R.string.add_to_the_cart_list, Toast.LENGTH_SHORT).show();
 
                                     Intent intent = new Intent(ProductdetailsActivity.this , Home2Activity.class);
                                     startActivity(intent);

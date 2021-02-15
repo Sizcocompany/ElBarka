@@ -1,0 +1,138 @@
+<resources>
+    <string name="app_name" translatable="false">ElBarka</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">الاعدادات</string>
+    <string name="welcome" translatable="false">مرحبا</string>
+    <string name="title_home" translatable="false">الصفحة الرئيسية</string>
+    <string name="menu_home" translatable="false">الصفحة الرئيسية</string>
+    <string name="menu_gallery" translatable="false">المعرض</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="add_new_product" translatable="false">اضافه منتج جديد</string>
+    <string name="maintain_product" translatable="false">تعديل المنتج</string>
+    <string name="logout" translatable="false">تسجيل الخروج</string>
+    <string name="approve_new_products" translatable="false">الموافقة على المنتجات الجديدة</string>
+    <string name="welcome_dear_admin" translatable="false">مرحبا بك عزيزي المشرف</string>
+    <string name="check_orders" translatable="false">تحقق من الطلبات</string>
+    <string name="check_and_approve_new_products" translatable="false">فحص واعتماد المنتجات الجديدة</string>
+    <string name="apply_changes" translatable="false">تطبيق التغييرات</string>
+    <string name="delete_this_product" translatable="false">حذف هذا المنتج</string>
+    <string name="new_orders" translatable="false">طلبات جديدة</string>
+    <string name="products_details" translatable="false">تفاصيل المنتجات</string>
+    <string name="total_price" translatable="false">السعر الإجمالي =</string>
+    <string name="congratulation_your_final_order_has_been_placed_successfully_soon_it_will_be_verified" translatable="false">تهانينا ، لقد تم تقديم طلبك النهائي بنجاح ، وسيتم التحقق منه قريبًا</string>
+    <string name="next" translatable="false">التالي</string>
+    <string name="please_write_your_shipment_details" translatable="false"> يرجى كتابة تفاصيل شحنتك</string>
+    <string name="confirm" translatable="false">تاكيد</string>
+    <string name="reset_password" translatable="false">إعادة تعيين كلمة المرور</string>
+    <string name="answer_the_following_security_questions" translatable="false">أجب على أسئلة الأمان التالية</string>
+    <string name="verify" translatable="false">التحقق</string>
+    <string name="remember_me" translatable="false">تذكرنى</string>
+    <string name="forget_password" translatable="false">نسيت كلمة المرور؟</string>
+    <string name="login" translatable="false">تسجيل الدخول</string>
+    <string name="i_m_an_admin" translatable="false">أنا مشرف</string>
+    <string name="i_m_not_an_admin" translatable="false">أنا لست مشرفًا</string>
+    <string name="join_now" translatable="false">انضم الان</string>
+    <string name="already_have_an_account_login" translatable="false">هل لديك حساب ؟  تسجيل الدخول</string>
+    <string name="product_name" translatable="false">اسم المنتج</string>
+    <string name="product_description" translatable="false">وصف المنتج</string>
+    <string name="product_price" translatable="false">سعر المنتج</string>
+    <string name="add_to_cart" translatable="false">أضف إلى السلة</string>
+    <string name="create_account" translatable="false">إنشاء حساب</string>
+    <string name="search" translatable="false">بحث</string>
+    <string name="close" translatable="false">اغلاق</string>
+    <string name="update" translatable="false">تحديث</string>
+    <string name="change_profile" translatable="false">تغيير الملف الشخصي</string>
+    <string name="security_question" translatable="false">اسألة أمان</string>
+    <string name="product_quantity" translatable="false">كمية المنتج</string>
+    <string name="user_name" translatable="false">اسم المستخدم</string>
+    <string name="phone_number" translatable="false">رقم الهاتف</string>
+    <string name="phone_quantity" translatable="false">رقم الهاتف</string>
+    <string name="address_city" translatable="false">عنوان/المدينة</string>
+    <string name="order_date_and_time" translatable="false">وقت و تاريخ الطلب</string>
+    <string name="show_orders_product" translatable="false">عرض طلبات المنتجات</string>
+    <string name="home" translatable="false">الصفحة الرئيسية</string>
+    <string name="login_account" translatable="false">تسجيل الدخول</string>
+    <string name="really_exit" translatable="false">هل تريد الخروج حقًا؟</string>
+    <string name="have_you_shipped_this_order_products" translatable="false">هل قمت بشحن منتجات هذا الطلب؟</string>
+    <string name="adding_new_product" translatable="false">اضافة منتج جديد</string>
+    <string name="do_you_want_to_approve_this_product" translatable="false">هل تريد الموافقة على هذا المنتج</string>
+    <string name="are_you_sure" translatable="false">هل أنت متأكد؟</string>
+    <string name="cart_option" translatable="false">خيارات عربة التسوق:</string>
+    <string name="new_password" translatable="false">كلمة السر الجديدة</string>
+    <string name="already_logged_in" translatable="false">قمت بتسجيل الدخول بالفعل</string>
+    <string name="update_profile" translatable="false">تحديث الملف</string>
+    <string name="dear_admin_please_wait_while_we_are_adding_product_now" translatable="false">عزيزي المشرف الرجاء الانتظار بينما نقوم باضافة المنتج الان</string>
+    <string name="are_you_sure_you_want_to_exit" translatable="false">هل أنت متأكد أنك تريد الخروج؟</string>
+    <string name="please_wait_while_updating_your_account_info" translatable="false">يرجى الانتظار أثناء تحديث معلومات حسابك</string>
+    <string name="please_wait_while_check_credantials" translatable="false">الرجاء الانتظار ، بينما تحقق الاعتمادات ...</string>
+    <string name="please_wait" translatable="false">رجاء الانتظار</string>
+    <string name="your_1st_answer_wrong" translatable="false">إجابتك الأولى خاطئة</string>
+    <string name="your_2nd_answer_wrong" translatable="false">إجابتك الثانية خاطئة</string>
+    <string name="please_add_image" translatable="false">الرجاء إضافة الصورة ...</string>
+    <string name="please_add_product_name" translatable="false">الرجاء إضافة اسم المنتج ...</string>
+    <string name="please_add_product_description" translatable="false">الرجاء إضافة وصف المنتج ...</string>
+    <string name="please_add_product_price" translatable="false">الرجاء إضافة سعر المنتج ...</string>
+    <string name="please_enter_user_name" translatable="false">الرجاء إدخال اسم المستخدم</string>
+    <string name="please_enter_user_phone" translatable="false">الرجاء إدخال الهاتف</string>
+    <string name="please_enter_user_password" translatable="false">الرجاء إدخال العنوان</string>
+    <string name="you_can_purchase_new_order_once_your_order_shipped_or_confirmed" translatable="false">يمكنك شراء طلب جديد بمجرد شحن طلبك أو تأكيده</string>
+    <string name="you_can_purchase_again_once_you_received_your_product" translatable="false">يمكنك الشراء مرة أخرى بمجرد استلام المنتج الخاص بك</string>
+    <string name="please_enter_your_full_name" translatable="false">من فضلك ادخل اسمك الكامل</string>
+    <string name="please_enter_your_phone_number" translatable="false">يرجى إدخال رقم الهاتف الخاص بك</string>
+    <string name="please_enter_your_address" translatable="false">الرجاء إدخال عنوانك</string>
+    <string name="please_enter_your_city" translatable="false">الرجاء إدخال مدينتك</string>
+    <string name="your_final_order_has_been_placed_successfully" translatable="false">تم وضع طلبك النهائي بنجاح</string>
+    <string name="please_answer_all_questions" translatable="false">الرجاء الإجابة على جميع الأسئلة</string>
+    <string name="add_to_the_cart_list" translatable="false">أضف إلى قائمة عربة التسوق</string>
+    <string name="error" translatable="false">Error : </string>
+    <string name="product_image_uploaded_successfully" translatable="false">تم تحميل صورة المنتج بنجاح ...</string>
+    <string name="getting_product_image_URL_successfully" translatable="false">يتم الحصول على عنوان URL لصورة المنتج بنجاح ...</string>
+    <string name="product_is_added_successfully" translatable="false">تم اضافة المنتج بنجاح ...</string>
+    <string name="product_approved_successfully" translatable="false">تمت الموافقة على المنتج بنجاح</string>
+    <string name="please_try_again_later" translatable="false">الرجاء معاودة المحاولة في وقت لاحق</string>
+    <string name="product_deleted_successfully" translatable="false">تم حذف المنتج بنجاح</string>
+    <string name="changes_applied_successfully" translatable="false">تم تطبيق التغييرات بنجاح</string>
+    <string name="item_removed_successfully" translatable="false">تمت إزالة العنصر بنجاح</string>
+    <string name="answers_have_set_security_questions_successfully" translatable="false">لقد نجحت الإجابات في تعيين أسئلة الأمان</string>
+    <string name="password_change_sucssfully" translatable="false">تغيير كلمة المرور بنجاح</string>
+    <string name="please_enter_password" translatable="false">الرجاء إدخال كلمة المرور</string>
+    <string name="you_have_not_answer_seciurty_questions" translatable="false">لم تجيب على أسئلة الأمن ...</string>
+    <string name="this_phone_not_exist" translatable="false">هذا الهاتف غير موجود</string>
+    <string name="please_complete_the_form" translatable="false">يرجى ملء النموذج...</string>
+    <string name="please_enter_phone" translatable="false">الرجاء إدخال الهاتف</string>
+    <string name="welcome_admin_you_are_logged_in_successfully" translatable="false">مرحبًا بالمسؤول ، لقد تم تسجيل الدخول بنجاح ...</string>
+    <string name="Logged_in_successfully" translatable="false">تم تسجيل الدخول بنجاح ...</string>
+    <string name="incorrect_password" translatable="false">كلمة سر خاطئة</string>
+    <string name="account_with" translatable="false">حساب مع</string>
+    <string name="not_exists" translatable="false">لا يوجد</string>
+    <string name="you_are_already_logged" translatable="false">لقد قمت بتسجيل الدخول بالفعل</string>
+    <string name="congratulations_your_account_has_been_created" translatable="false">تهانينا ، لقد تم إنشاء حسابك</string>
+    <string name="network_error_please_try_again_later" translatable="false">خطأ في الشبكة ، يرجى المحاولة مرة أخرى لاحقًا ...</string>
+    <string name="this_" translatable="false">هذا </string>
+    <string name="already_exists" translatable="false"> موجود </string>
+    <string name="please_use_another_phone_number" translatable="false">الرجاء استخدام رقم هاتف آخر</string>
+    <string name="name_is_mandatory" translatable="false">الاسم إلزامي</string>
+    <string name="phone_is_mandatory" translatable="false">الهاتف إلزامي</string>
+    <string name="address_is_mandatory" translatable="false">العنوان إلزامي</string>
+    <string name="profile_info_updated_sucssfully" translatable="false">تم تحديث معلومات الملف الشخصي بنجاح</string>
+    <string name="image_is_not_selected" translatable="false">لم يتم تحديد الصورة</string>
+    <string name="password" translatable="false">كلمه المرور</string>
+    <string name="where_is_your_parent_met">أين التقى والديك؟</string>
+    <string name="your_hero">من هو بطلك</string>
+    <string name="quantity">الكمية = </string>
+    <string name="price">السعر = </string>
+    <string name="shipping_address">عنوان الشحن</string>
+    <string name="order_at">طلب في</string>
+    <string name="dear">عزيزي</string>
+    <string name="order_is_shipped_successfully">تم شحن الطلب بنجاح</string>
+    <string name="congratulation_your_final_order_has_been_shipped_successfully_soon_will_received_your_order_your_location">تهانينا ، لقد تم شحن طلبك النهائي بنجاح ، وسيتلقى طلبك قريبًا موقعك</string>
+    <string name="Order_is_still_not_shipped_please_wait">الطلب لا يزال لم يتم شحنه من فضلك انتظر</string>
+    <string name="set_questions">تعيين الأسئلة</string>
+    <string name="set">تعيين</string>
+    <string name="login_admin">تسجيل الدخول(مشرف)</string>
+    <string name="please_set_answers_the_following_security_questions">يرجى تعيين الإجابات على أسئلة الأمان التالية</string>
+</resources>

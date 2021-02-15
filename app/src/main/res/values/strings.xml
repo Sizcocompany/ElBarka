@@ -1,14 +1,138 @@
 <resources>
-    <string name="app_name">ElBarka</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="welcome" translatable="false">اهلا وسهلا</string>
-    <string name="title_home">Home</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="app_name" translatable="false">ElBarka</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="welcome" translatable="false">welcome</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="add_new_product" translatable="false">Add New Product</string>
+    <string name="maintain_product" translatable="false">Maintain Product</string>
+    <string name="logout" translatable="false">logout</string>
+    <string name="approve_new_products" translatable="false">Approve new Products</string>
+    <string name="welcome_dear_admin" translatable="false">Welcome Dear admin</string>
+    <string name="check_orders" translatable="false">check Orders</string>
+    <string name="check_and_approve_new_products" translatable="false">Check and Approve New Products</string>
+    <string name="apply_changes" translatable="false">Apply changes</string>
+    <string name="delete_this_product" translatable="false">Delete this Product</string>
+    <string name="new_orders" translatable="false">New Orders</string>
+    <string name="products_details" translatable="false">Products Details</string>
+    <string name="total_price" translatable="false">Total Price =</string>
+    <string name="congratulation_your_final_order_has_been_placed_successfully_soon_it_will_be_verified" translatable="false">Congratulation , your final order has been placed successfully , soon it will be verified</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="please_write_your_shipment_details" translatable="false">Please write your shipment Details</string>
+    <string name="confirm" translatable="false">Confirm</string>
+    <string name="reset_password" translatable="false">Reset password</string>
+    <string name="answer_the_following_security_questions" translatable="false">Answer the following security questions</string>
+    <string name="verify" translatable="false">Verify</string>
+    <string name="remember_me" translatable="false">Remember Me</string>
+    <string name="forget_password" translatable="false">Forget Password?</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="i_m_an_admin" translatable="false">I\'m an Admin</string>
+    <string name="i_m_not_an_admin" translatable="false">I\'m not an Admin</string>
+    <string name="join_now" translatable="false">Join Now</string>
+    <string name="already_have_an_account_login" translatable="false">Already have an Account ? login</string>
+    <string name="product_name" translatable="false">Product name</string>
+    <string name="product_description" translatable="false">Product Description</string>
+    <string name="product_price" translatable="false">Product Price</string>
+    <string name="add_to_cart" translatable="false">Add to cart</string>
+    <string name="create_account" translatable="false">Create Account</string>
+    <string name="search" translatable="false">Search</string>
+    <string name="close" translatable="false">Close</string>
+    <string name="update" translatable="false">Update</string>
+    <string name="change_profile" translatable="false">Change profile</string>
+    <string name="security_question" translatable="false">Security Question</string>
+    <string name="product_quantity" translatable="false">Product Quantity</string>
+    <string name="user_name" translatable="false">User Name</string>
+    <string name="phone_number" translatable="false">Phone Number</string>
+    <string name="phone_quantity" translatable="false">Phone Quantity</string>
+    <string name="address_city" translatable="false">Address / city</string>
+    <string name="order_date_and_time" translatable="false">Order date and time</string>
+    <string name="show_orders_product" translatable="false">Show Orders Product</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="login_account" translatable="false">Login Account</string>
+    <string name="really_exit" translatable="false">Really Exit?</string>
+    <string name="have_you_shipped_this_order_products" translatable="false">Have you shipped this Order products ?</string>
+    <string name="adding_new_product" translatable="false">Adding new Product</string>
+    <string name="do_you_want_to_approve_this_product" translatable="false">Do you want to approve this Product</string>
+    <string name="are_you_sure" translatable="false">Are You sure?</string>
+    <string name="cart_option" translatable="false">Cart Options : </string>
+    <string name="new_password" translatable="false">New Password</string>
+    <string name="already_logged_in" translatable="false">Already logged in</string>
+    <string name="update_profile" translatable="false">Update Profile</string>
+    <string name="dear_admin_please_wait_while_we_are_adding_product_now" translatable="false">Dear Admin , Please wait , while we are adding product now</string>
+    <string name="are_you_sure_you_want_to_exit" translatable="false">Are you sure you want to exit?</string>
+    <string name="please_wait_while_updating_your_account_info" translatable="false">Please wait , while updating your Account info</string>
+    <string name="please_wait_while_check_credantials" translatable="false">Please Wait , while check credantials ...</string>
+    <string name="please_wait" translatable="false">Please Wait</string>
+    <string name="your_1st_answer_wrong" translatable="false">Your first answer is wrong</string>
+    <string name="your_2nd_answer_wrong" translatable="false">Your second answer is wrong</string>
+    <string name="please_add_image" translatable="false">Please add Image...</string>
+    <string name="please_add_product_name" translatable="false">Please add Product Name...</string>
+    <string name="please_add_product_description" translatable="false">Please add Product Description...</string>
+    <string name="please_add_product_price" translatable="false">Please add Product Price...</string>
+    <string name="please_enter_user_name" translatable="false">Please Enter User Name</string>
+    <string name="please_enter_user_phone" translatable="false">Please Enter Phone</string>
+    <string name="please_enter_user_password" translatable="false">Please Enter Address</string>
+    <string name="you_can_purchase_new_order_once_your_order_shipped_or_confirmed" translatable="false">you can purchase new order once your order shipped or confirmed</string>
+    <string name="you_can_purchase_again_once_you_received_your_product" translatable="false">You Can purchase again once you received your product</string>
+    <string name="please_enter_your_full_name" translatable="false">Please enter your full name</string>
+    <string name="please_enter_your_phone_number" translatable="false">Please enter your Phone number</string>
+    <string name="please_enter_your_address" translatable="false">Please enter your Address</string>
+    <string name="please_enter_your_city" translatable="false">Please enter your city</string>
+    <string name="your_final_order_has_been_placed_successfully" translatable="false">Your final order has been placed successfully</string>
+    <string name="please_answer_all_questions" translatable="false">Please answer all questions</string>
+    <string name="add_to_the_cart_list" translatable="false">Add to the Cart List</string>
+    <string name="error" translatable="false">Error : </string>
+    <string name="product_image_uploaded_successfully" translatable="false">Product image uploaded successfully...</string>
+    <string name="getting_product_image_URL_successfully" translatable="false">Getting product image URL successfully...</string>
+    <string name="product_is_added_successfully" translatable="false">Product is added  successfully...</string>
+    <string name="product_approved_successfully" translatable="false">Product approved Successfully</string>
+    <string name="please_try_again_later" translatable="false">Please try again later</string>
+    <string name="product_deleted_successfully" translatable="false">Product deleted successfully</string>
+    <string name="changes_applied_successfully" translatable="false">Changes applied Successfully</string>
+    <string name="item_removed_successfully" translatable="false">Item removed successfully</string>
+    <string name="answers_have_set_security_questions_successfully" translatable="false">Answers have set security questions  successfully</string>
+    <string name="password_change_sucssfully" translatable="false">Password change sucssfully</string>
+    <string name="please_enter_password" translatable="false">Please enter password</string>
+    <string name="you_have_not_answer_seciurty_questions" translatable="false">You have not answer seciurty questions...</string>
+    <string name="this_phone_not_exist" translatable="false">This phone not exist</string>
+    <string name="please_complete_the_form" translatable="false">Please complete the form...</string>
+    <string name="please_enter_phone" translatable="false">Please Enter Phone</string>
+    <string name="welcome_admin_you_are_logged_in_successfully" translatable="false">welcome Admin you are Logged in Successfully...</string>
+    <string name="Logged_in_successfully" translatable="false">Logged in Successfully...</string>
+    <string name="incorrect_password" translatable="false">incorrect password</string>
+    <string name="account_with" translatable="false">Account with </string>
+    <string name="not_exists" translatable="false"> not exists</string>
+    <string name="you_are_already_logged" translatable="false">You are already logged</string>
+    <string name="congratulations_your_account_has_been_created" translatable="false">Congratulations your account has been created</string>
+    <string name="network_error_please_try_again_later" translatable="false">Network Error , please try again later...</string>
+    <string name="this_" translatable="false">This </string>
+    <string name="already_exists" translatable="false"> already exists</string>
+    <string name="please_use_another_phone_number" translatable="false">Please use another phone number</string>
+    <string name="name_is_mandatory" translatable="false">Name is Mandatory</string>
+    <string name="phone_is_mandatory" translatable="false">Phone is Mandatory</string>
+    <string name="address_is_mandatory" translatable="false">Address is Mandatory</string>
+    <string name="profile_info_updated_sucssfully" translatable="false">Profile info updated sucssfully</string>
+    <string name="image_is_not_selected" translatable="false">Image is not Selected</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="where_is_your_parent_met">Where is your parent met ?</string>
+    <string name="your_hero">Your Hero .. ?</string>
+    <string name="quantity">Quantity = </string>
+    <string name="price">Price = </string>
+    <string name="shipping_address">Shipping address</string>
+    <string name="order_at">Order at </string>
+    <string name="dear">Dear </string>
+    <string name="order_is_shipped_successfully">Order is shipped successfully</string>
+    <string name="congratulation_your_final_order_has_been_shipped_successfully_soon_will_received_your_order_your_location">Congratulation , your final order has been shipped successfully , soon will received your order your location</string>
+    <string name="Order_is_still_not_shipped_please_wait">Order is still not shipped please wait</string>
+    <string name="set_questions">Set Questions</string>
+    <string name="set">Set</string>
+    <string name="login_admin">Login Admin</string>
+    <string name="please_set_answers_the_following_security_questions">Please set Answers the following security questions</string>
 </resources>

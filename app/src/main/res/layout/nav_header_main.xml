@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:textSize="20sp"
-        android:text="User Name"
+        android:text="@string/user_name"
         android:textColor="@color/white"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

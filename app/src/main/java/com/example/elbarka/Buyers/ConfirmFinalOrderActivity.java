@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.elbarka.Model.Cart;
 import com.example.elbarka.Prevalent.Prevalent;
 import com.example.elbarka.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,7 +37,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         // recieve total price from cart activity sent in intent
         totalAmount = getIntent().getStringExtra("Total Price");
-        Toast.makeText(this, "Total Price =  " + totalAmount, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.total_price + totalAmount, Toast.LENGTH_SHORT).show();
 
         nameEditText = findViewById(R.id.shapment_name);
         phoneEditText = findViewById(R.id.shapment_phoneNumber);
@@ -59,18 +60,18 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(nameEditText.getText().toString())) {
 
-            Toast.makeText(this, "Please enter your full name ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_your_full_name, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(phoneEditText.getText().toString())) {
 
-            Toast.makeText(this, "Please enter your Phone number ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_your_phone_number, Toast.LENGTH_SHORT).show();
 
         } else if (TextUtils.isEmpty(addressEditText.getText().toString())) {
 
-            Toast.makeText(this, "Please enter your Address ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_your_address, Toast.LENGTH_SHORT).show();
 
         } else if (TextUtils.isEmpty(cityEditText.getText().toString())) {
 
-            Toast.makeText(this, "Please enter your city", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_your_city, Toast.LENGTH_SHORT).show();
         }else {
 
             confirmOrder();
@@ -116,7 +117,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
 
-                                    Toast.makeText(ConfirmFinalOrderActivity.this, "Your final order has been placed successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ConfirmFinalOrderActivity.this, R.string.your_final_order_has_been_placed_successfully, Toast.LENGTH_SHORT).show();
 
                                     Intent intent = new Intent( ConfirmFinalOrderActivity.this , Home2Activity.class);
                                     // below step to don't let customer to back again to this activity
@@ -132,5 +133,12 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ConfirmFinalOrderActivity.this, CartActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

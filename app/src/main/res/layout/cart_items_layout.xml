@@ -17,7 +17,7 @@
             android:id="@+id/order_user_name"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:text="Product Name"
+            android:text="@string/product_name"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:layout_marginLeft="5dp"
@@ -28,20 +28,20 @@
             android:id="@+id/order_phone_number"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:text="Product Quantity"
+            android:text="@string/product_quantity"
             android:gravity="right"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:layout_marginRight="5dp"
             android:layout_alignParentEnd="true"
             android:textStyle="bold"
-            />
+            android:layout_alignParentRight="true" />
 
         <TextView
             android:id="@+id/order_total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Product Price"
+            android:text="@string/product_price"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"

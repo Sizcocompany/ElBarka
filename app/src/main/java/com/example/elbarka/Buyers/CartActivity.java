@@ -58,7 +58,7 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                totalAmount.setText("Total Price = " + String.valueOf(overTotalPrice) + " LE");
+                totalAmount.setText(R.string.total_price + String.valueOf(overTotalPrice) + " LE");
 
                 Intent intent = new Intent(CartActivity.this , ConfirmFinalOrderActivity.class);
                 // sent total price to confirm activity
@@ -93,15 +93,15 @@ public class CartActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull Cart cart) {
 
-                        holder.txtProductQuantity.setText("Quantity = " + cart.getQuantity());
-                        holder.txtProductPrice.setText("Price = " + cart.getPrice() + " LE");
+                        holder.txtProductQuantity.setText(R.string.quantity + cart.getQuantity());
+                        holder.txtProductPrice.setText(R.string.price + cart.getPrice() + " LE");
                         holder.txtProductName.setText(cart.getPname());
 
 
                         // this is to calculate all product price
                         int oneTypeProdutTotalPrice = ((Integer.valueOf(cart.getPrice()))) * Integer.valueOf(cart.getQuantity());
                         overTotalPrice = overTotalPrice + oneTypeProdutTotalPrice ;
-                        totalAmount.setText("Total Price = "+ String.valueOf(overTotalPrice));
+                        totalAmount.setText(R.string.total_price+ String.valueOf(overTotalPrice));
 
 
                         // here will allow user to delete , remove or edite item from Cart view
@@ -118,7 +118,7 @@ public class CartActivity extends AppCompatActivity {
                                         };
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
-                                builder.setTitle("Cart Options : ");
+                                builder.setTitle(R.string.cart_option);
 
                                 builder.setItems(options, new DialogInterface.OnClickListener() {
                                     @Override
@@ -143,7 +143,7 @@ public class CartActivity extends AppCompatActivity {
 
                                                     if (task.isSuccessful()) {
 
-                                                        Toast.makeText(CartActivity.this, "Item  removed successfully ", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(CartActivity.this, R.string.item_removed_successfully, Toast.LENGTH_SHORT).show();
 
                                                         Intent intent = new Intent(CartActivity.this, Home2Activity.class);
 
@@ -195,22 +195,22 @@ public class CartActivity extends AppCompatActivity {
 
                     if (shippingState.equals("shipped")){
 
-                        totalAmount.setText("Dear " + userName + "\n Order is shipped successfully ");
+                        totalAmount.setText(R.string.dear + userName + "\n"+R.string.order_is_shipped_successfully);
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
-                        txtMsg1.setText("Congratulation , your final order has been shipped successfully , soon will received your order your location ");
+                        txtMsg1.setText(R.string.congratulation_your_final_order_has_been_shipped_successfully_soon_will_received_your_order_your_location);
                         nextProceedStep.setVisibility(View.GONE);
 
-                        Toast.makeText(CartActivity.this, "You Can purchase again once you received your product ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this, R.string.you_can_purchase_again_once_you_received_your_product, Toast.LENGTH_SHORT).show();
 
                     }else if(shippingState.equals("not shipped")){
 
-                        totalAmount.setText("Dear " + userName + "\n Order is still not shipped please wait  ");
+                        totalAmount.setText(R.string.dear + userName + "\n"+R.string.Order_is_still_not_shipped_please_wait);
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
                         nextProceedStep.setVisibility(View.GONE);
 
-                        Toast.makeText(CartActivity.this, "You Can purchase again once you received your product ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this, R.string.you_can_purchase_again_once_you_received_your_product, Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -223,5 +223,12 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(CartActivity.this, Home2Activity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -76,7 +76,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(AdminMaintainProductsActivity.this);
-                builder.setTitle("Are You sure?");
+                builder.setTitle(R.string.are_you_sure);
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -104,7 +104,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 // to don't let custome go back again
                 finish();
 
-                Toast.makeText(AdminMaintainProductsActivity.this, "Product deleted successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminMaintainProductsActivity.this, R.string.product_deleted_successfully, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -120,13 +120,13 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
        if(pName.equals("")){
 
-           Toast.makeText(this, "Please enter product name ", Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, R.string.please_add_product_name, Toast.LENGTH_SHORT).show();
        }else if(pPrice.equals("")){
 
-           Toast.makeText(this, "Please enter product Price ", Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, R.string.please_add_product_price, Toast.LENGTH_SHORT).show();
        }else if(pDescription.equals("")){
 
-           Toast.makeText(this, "Please enter product Description", Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, R.string.please_add_product_description, Toast.LENGTH_SHORT).show();
        }else {
 
            // now we will save change with hashmap as we done in admin add new product activity under saveProductInfoToDataBase()
@@ -144,7 +144,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                    
                    if(task.isSuccessful()){
 
-                       Toast.makeText(AdminMaintainProductsActivity.this, "Changes applied Successfully  ", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(AdminMaintainProductsActivity.this, R.string.changes_applied_successfully, Toast.LENGTH_SHORT).show();
 
                        Intent intent = new Intent(AdminMaintainProductsActivity.this , AdminCategoryActivity.class);
                        startActivity(intent);

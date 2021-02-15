@@ -12,26 +12,28 @@ import com.example.elbarka.Buyers.Home2Activity;
 import com.example.elbarka.Buyers.MainActivity;
 import com.example.elbarka.R;
 
+import io.paperdb.Paper;
+
 public class AdminCategoryActivity extends AppCompatActivity {
 
-    private ImageView nuts, honey, dates, baked ;
-    private ImageView olive_oil, yamiesh, coffee, shoes ;
+    private ImageView nuts, honey, dates, baked;
+    private ImageView olive_oil, yamiesh, coffee, shoes;
 //    private ImageView headPhone , laptops , watches , mobile_phone ;
 
-    private Button checkOrdersBtn , adminLogoutBtn , maintainProductsBtn;
+    private Button checkOrdersBtn, adminLogoutBtn, maintainProductsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_admin_category );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin_category);
 
-        nuts = findViewById( R.id.nutes_image);
-        honey = findViewById( R.id.honey_image);
-        dates = findViewById( R.id.dates_image);
-        baked = findViewById( R.id.baked_image);
-        olive_oil = findViewById( R.id.olive_oil);
-        yamiesh = findViewById( R.id.yamiseh_image);
-        coffee = findViewById( R.id.coffee);
+        nuts = findViewById(R.id.nutes_image);
+        honey = findViewById(R.id.honey_image);
+        dates = findViewById(R.id.dates_image);
+        baked = findViewById(R.id.baked_image);
+        olive_oil = findViewById(R.id.olive_oil);
+        yamiesh = findViewById(R.id.yamiseh_image);
+        coffee = findViewById(R.id.coffee);
 //        shoes = findViewById( R.id.shoes );
 //        headPhone = findViewById( R.id.headphones_handfree);
 //        laptops = findViewById( R.id.laptop_PC);
@@ -44,9 +46,9 @@ public class AdminCategoryActivity extends AppCompatActivity {
         maintainProductsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this , Home2Activity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, Home2Activity.class);
                 // we will send to homeactivity with string to can defratiate between admin and user
-                intent.putExtra("Admin" , "Admin");
+                intent.putExtra("Admin", "Admin");
                 startActivity(intent);
             }
         });
@@ -54,11 +56,14 @@ public class AdminCategoryActivity extends AppCompatActivity {
         adminLogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this , MainActivity.class);
                 // below to don't allow user to back again
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Paper.book().destroy();
+
+                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
+
 
             }
         });
@@ -67,7 +72,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(AdminCategoryActivity.this , AdminNewOrdersActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
 
             }
@@ -77,65 +82,65 @@ public class AdminCategoryActivity extends AppCompatActivity {
         nuts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "nuts" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "nuts");
+                startActivity(intent);
             }
-        } );
+        });
 
         honey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "honey" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "honey");
+                startActivity(intent);
             }
-        } );
+        });
 
         dates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "dates" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "dates");
+                startActivity(intent);
             }
-        } );
+        });
 
-        baked.setOnClickListener( new View.OnClickListener() {
+        baked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "baked" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "baked");
+                startActivity(intent);
             }
-        } );
+        });
 
         olive_oil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "olive oli" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "olive oli");
+                startActivity(intent);
             }
-        } );
+        });
 //
-        yamiesh.setOnClickListener( new View.OnClickListener() {
+        yamiesh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "yamiesh" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "yamiesh");
+                startActivity(intent);
             }
-        } );
+        });
 
-        coffee.setOnClickListener( new View.OnClickListener() {
+        coffee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AdminCategoryActivity.this , AdminAddNewProductActivity.class);
-                intent.putExtra( "category" , "coffee" );
-                startActivity( intent );
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "coffee");
+                startActivity(intent);
             }
-        } );
+        });
 //
 //        shoes.setOnClickListener( new View.OnClickListener() {
 //            @Override

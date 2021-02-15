@@ -120,16 +120,16 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         if( imageUri == null){
 
-            Toast.makeText( this, "Please add Image ...", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_add_image, Toast.LENGTH_SHORT ).show();
         }else if(TextUtils.isEmpty( productName )){
 
-            Toast.makeText( this, "Please add Product Name ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_add_product_name, Toast.LENGTH_SHORT ).show();
         }else if(TextUtils.isEmpty( description )){
 
-            Toast.makeText( this, "Please Write product  description  ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_add_product_description, Toast.LENGTH_SHORT ).show();
         }else if(TextUtils.isEmpty( price )){
 
-            Toast.makeText( this, "Please add Product price  ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.please_add_product_price, Toast.LENGTH_SHORT ).show();
         }else {
 
             storeProductInformation();
@@ -139,8 +139,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
     private void storeProductInformation() {
 
-        loadingBar.setTitle( "Adding new Product " );
-        loadingBar.setMessage( "Dear Admin , Please wait , while we are adding product now " );
+        loadingBar.setTitle( R.string.adding_new_product );
+        loadingBar.setMessage(this.getResources().getString(R.string.dear_admin_please_wait_while_we_are_adding_product_now));
         loadingBar.setCanceledOnTouchOutside( false );
         loadingBar.show();
 
@@ -167,7 +167,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
 
                 String massage = e.toString();
-                Toast.makeText( AdminAddNewProductActivity.this, "Error : " + massage, Toast.LENGTH_SHORT ).show();
+                Toast.makeText( AdminAddNewProductActivity.this, R.string.error + massage, Toast.LENGTH_SHORT ).show();
                 loadingBar.dismiss();
 
             }
@@ -175,7 +175,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                Toast.makeText( AdminAddNewProductActivity.this, "Product Image Uploaded successfully ...", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( AdminAddNewProductActivity.this, R.string.product_image_uploaded_successfully, Toast.LENGTH_SHORT ).show();
 
                 Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
@@ -195,7 +195,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Uri> task) {
 
                         downloadImageUrl = task.getResult().toString();
-                        Toast.makeText( AdminAddNewProductActivity.this, "getting Product Image URL successfully ... ", Toast.LENGTH_SHORT ).show();
+                        Toast.makeText( AdminAddNewProductActivity.this, R.string.getting_product_image_URL_successfully, Toast.LENGTH_SHORT ).show();
 
                         // now will store all product info in database
 
@@ -230,12 +230,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                             startActivity( intent );
 
                             loadingBar.dismiss();
-                            Toast.makeText( AdminAddNewProductActivity.this, "Product is added  successfully ...", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( AdminAddNewProductActivity.this, R.string.product_is_added_successfully, Toast.LENGTH_SHORT ).show();
                         }else {
 
                             loadingBar.dismiss();
                             String massege = task.getException().toString();
-                            Toast.makeText( AdminAddNewProductActivity.this, "Error : " + massege, Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( AdminAddNewProductActivity.this, R.string.error + massege, Toast.LENGTH_SHORT ).show();
                         }
 
                     }

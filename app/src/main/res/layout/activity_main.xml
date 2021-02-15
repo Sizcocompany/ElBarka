@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_logo"
+    android:background="@color/app_background_color"
     tools:context=".Buyers.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/app_logo"/>
 
     <Button
         android:id="@+id/main_Join_now_btn"
@@ -16,7 +21,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/input_design"
-        android:text="Join Now  "
+        android:text="@string/join_now"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textAllCaps="false"
@@ -32,7 +37,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/buttons"
-        android:text="Already have an Account ? login "
+        android:text="@string/already_have_an_account_login"
         android:layout_above="@+id/seller_begain"
         android:textColor="@color/white"
         android:textStyle="bold"

@@ -30,6 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
 
@@ -54,7 +55,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView( R.layout.activity_settings );
 
         storageProfilePicRef = FirebaseStorage.getInstance().getReference().child( "Profile pictures" );
-
         profileImageView = findViewById( R.id.settings_profile_image );
         profileChangeBtn = findViewById( R.id.profile_image_change_Btn );
         closeBtn = findViewById( R.id.close_settingsBtn );
@@ -116,7 +116,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 CropImage.activity(imageUri)
                         .setAspectRatio( 1, 1 )
-                        .start(SettingsActivity.this );
+                        .start(SettingsActivity.this);
             }
         } );
     }
@@ -139,7 +139,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText( this, "Error please try again later  ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.error+" "+R.string.please_try_again_later, Toast.LENGTH_SHORT ).show();
 
             // refresh activity
             startActivity( new Intent(SettingsActivity.this , SettingsActivity.class) );
@@ -152,14 +152,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty( fullNameEditeText.getText().toString() )){
 
-            Toast.makeText( this, "Name is Mandatory", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.name_is_mandatory, Toast.LENGTH_SHORT ).show();
         }else if(TextUtils.isEmpty( userPhoneEditeText.getText().toString() )){
 
-            Toast.makeText( this, "Phone is Mandatory", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.phone_is_mandatory, Toast.LENGTH_SHORT ).show();
 
         }else if(TextUtils.isEmpty( addressEditeText.getText().toString() )){
 
-            Toast.makeText( this, "Address is Mandatory", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.address_is_mandatory, Toast.LENGTH_SHORT ).show();
         }else if(checker.equals( "clicked" )){
 
             uploadImage();
@@ -171,8 +171,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog( this );
 
-        progressDialog.setTitle( "Update Profile" );
-        progressDialog.setMessage( " Please wait , while updating your Account info " );
+        progressDialog.setTitle(R.string.update_profile);
+        progressDialog.setMessage(this.getResources().getString(R.string.please_wait_while_updating_your_account_info) );
         progressDialog.setCanceledOnTouchOutside( false );
         progressDialog.show();
 
@@ -217,21 +217,21 @@ public class SettingsActivity extends AppCompatActivity {
                             progressDialog.dismiss();
 
                             startActivity( new Intent(SettingsActivity.this , Home2Activity.class) );
-                            Toast.makeText( SettingsActivity.this, "Profile info updated sucssfully ", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( SettingsActivity.this, R.string.profile_info_updated_sucssfully, Toast.LENGTH_SHORT ).show();
 
                             finish();
 
                         }else {
 
                             progressDialog.dismiss();
-                            Toast.makeText( SettingsActivity.this, "Error happend please try again later", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( SettingsActivity.this, R.string.error+" "+R.string.please_try_again_later, Toast.LENGTH_SHORT ).show();
                         }
                     }
                 } );
 
         }else {
 
-            Toast.makeText( this, "Image is not Selected ", Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, R.string.image_is_not_selected, Toast.LENGTH_SHORT ).show();
         }
     }
 
@@ -248,7 +248,7 @@ public class SettingsActivity extends AppCompatActivity {
         ref.child( Prevalent.currentOnlineUsers.getPhone()).updateChildren( hashMap );
 
         startActivity( new Intent(SettingsActivity.this , Home2Activity.class) );
-        Toast.makeText( SettingsActivity.this, "Profile info updated Successfully ", Toast.LENGTH_SHORT ).show();
+        Toast.makeText( SettingsActivity.this, R.string.profile_info_updated_sucssfully, Toast.LENGTH_SHORT ).show();
 
         finish();
 
