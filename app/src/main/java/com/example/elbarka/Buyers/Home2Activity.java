@@ -67,7 +67,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
             type = getIntent().getExtras().get("Admin").toString();
         }
 
-        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Sellersproducts");
+        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
         Paper.init(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

@@ -41,7 +41,7 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
         layoutManager =  new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        unApprovedProductsRef = FirebaseDatabase.getInstance().getReference().child("Sellersproducts");
+        unApprovedProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
     }
 
