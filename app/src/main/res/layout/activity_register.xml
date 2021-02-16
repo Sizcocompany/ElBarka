@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/input_design"
+        android:background="@drawable/buttons"
         android:text="@string/create_account"
         android:layout_below="@id/register__Password_inpute"
         android:layout_marginTop="10dp"
