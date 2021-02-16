@@ -1,12 +1,16 @@
 package com.example.elbarka.Admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.elbarka.Buyers.Home2Activity;
 import com.example.elbarka.Buyers.MainActivity;
@@ -188,5 +192,25 @@ public class AdminCategoryActivity extends AppCompatActivity {
 //        } );
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.really_exit))
+                    .setMessage(getString(R.string.are_you_sure_you_want_to_exit))
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            setResult(RESULT_OK, new Intent().putExtra("EXIT", true));
+                            finish();
+                        }
+
+                    }).create().show();
+        }
     }
 }

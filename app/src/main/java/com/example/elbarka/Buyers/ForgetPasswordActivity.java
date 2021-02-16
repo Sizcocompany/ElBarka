@@ -28,9 +28,9 @@ import java.util.HashMap;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
 
-    public String check = "" ;
-    public TextView pageTitle , titleQuestions;
-    public EditText phoneNumber , question_1 , question_2 ;
+    public String check = "";
+    public TextView pageTitle, titleQuestions;
+    public EditText phoneNumber, question_1, question_2;
     public Button verify_Btn;
 
     @Override
@@ -59,14 +59,13 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
 
         // we will check if user come from login activity oe setting activity
-        if(check.equals("settings"))
-        {
+        if (check.equals("settings")) {
 
-            pageTitle.setText(R.string.set_questions);
+            pageTitle.setText(getString(R.string.set_questions));
 
-            titleQuestions.setText(R.string.please_set_answers_the_following_security_questions);
+            titleQuestions.setText(getString(R.string.please_set_answers_the_following_security_questions));
 
-            verify_Btn.setText(R.string.set);
+            verify_Btn.setText(getString(R.string.set));
 
             // we create this method to check if customer have pervoius answer or not
             // if yes we will set answers on question edit text to be shown to customer before edit it
@@ -82,7 +81,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 }
             });
 
-        }else if(check.equals("login")){
+        } else if (check.equals("login")) {
 
             phoneNumber.setVisibility(View.VISIBLE);
 
@@ -99,7 +98,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         }
     }
 
-    private void setAnswers(){
+    private void setAnswers() {
 
 
         // we add .tolowercase to pass answer and convert it to  small characher in data base and when csutomer try to write it again
@@ -107,27 +106,27 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         String answer1 = question_1.getText().toString().toLowerCase();
         String answer2 = question_2.getText().toString().toLowerCase();
 
-        if(question_1.equals("") && question_2.equals("")){
+        if (question_1.equals("") && question_2.equals("")) {
 
-            Toast.makeText(ForgetPasswordActivity.this, R.string.please_answer_all_questions, Toast.LENGTH_SHORT).show();
-        }else {
+            Toast.makeText(ForgetPasswordActivity.this, getString(R.string.please_answer_all_questions), Toast.LENGTH_SHORT).show();
+        } else {
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference()
                     .child("Users").child(Prevalent.currentOnlineUsers.getPhone());
 
             // now we can add another child for questions in user data  called " sedcrity questions " and add answers in answer 1 and answer2 fields
             HashMap<String, Object> answerMap = new HashMap<>();
-            answerMap.put("answer1" , answer1);
-            answerMap.put("answer2" , answer2);
+            answerMap.put("answer1", answer1);
+            answerMap.put("answer2", answer2);
 
             ref.child("Security Questions").updateChildren(answerMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
 
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
 
-                        Toast.makeText(ForgetPasswordActivity.this, R.string.answers_have_set_security_questions_successfully, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ForgetPasswordActivity.this , Home2Activity.class);
+                        Toast.makeText(ForgetPasswordActivity.this, getString(R.string.answers_have_set_security_questions_successfully), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ForgetPasswordActivity.this, Home2Activity.class);
                         startActivity(intent);
                     }
 
@@ -136,7 +135,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         }
     }
 
-    private void displayPreviousAnswers (){
+    private void displayPreviousAnswers() {
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference()
                 .child("Users").child(Prevalent.currentOnlineUsers.getPhone());
@@ -145,7 +144,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
 
                     // now we check if customer have perivous answer we will sent then in 2 strings and put then on question 1 and 2
                     String ans1 = snapshot.child("answer1").getValue().toString();
@@ -170,7 +169,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         String answer1 = question_1.getText().toString().toLowerCase();
         String answer2 = question_2.getText().toString().toLowerCase();
 
-        if(!phone.equals("") && !answer1.equals("") && !answer2.equals("")){
+        if (!phone.equals("") && !answer1.equals("") && !answer2.equals("")) {
 
             final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users")
                     .child(phone);
@@ -193,15 +192,15 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                             if (!ans1.equals(answer1)) {
 
-                                Toast.makeText(ForgetPasswordActivity.this, R.string.your_1st_answer_wrong, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgetPasswordActivity.this, getString(R.string.your_1st_answer_wrong), Toast.LENGTH_SHORT).show();
                             } else if (!ans2.equals(answer2)) {
 
-                                Toast.makeText(ForgetPasswordActivity.this, R.string.your_2nd_answer_wrong, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgetPasswordActivity.this, getString(R.string.your_2nd_answer_wrong), Toast.LENGTH_SHORT).show();
 
                             } else {
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(ForgetPasswordActivity.this);
-                                builder.setTitle(R.string.new_password);
+                                builder.setTitle(getString(R.string.new_password));
 
                                 final EditText newPassword = new EditText(ForgetPasswordActivity.this);
                                 newPassword.setHint("Write new password here ...");
@@ -220,14 +219,14 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                                                             if (task.isSuccessful()) {
 
-                                                                Intent intent = new Intent(ForgetPasswordActivity.this , LoginActivity.class);
+                                                                Intent intent = new Intent(ForgetPasswordActivity.this, LoginActivity.class);
                                                                 startActivity(intent);
                                                                 dialog.dismiss();
 
-                                                                Toast.makeText(ForgetPasswordActivity.this, R.string.password_change_sucssfully, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(ForgetPasswordActivity.this, getString(R.string.password_change_sucssfully), Toast.LENGTH_SHORT).show();
                                                             } else {
 
-                                                                Toast.makeText(ForgetPasswordActivity.this, R.string.please_try_again_later, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(ForgetPasswordActivity.this, getString(R.string.please_try_again_later), Toast.LENGTH_SHORT).show();
                                                             }
                                                         }
                                                     });
@@ -235,7 +234,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                                         } else {
 
-                                            Toast.makeText(ForgetPasswordActivity.this, R.string.please_enter_password, Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ForgetPasswordActivity.this, getString(R.string.please_enter_password), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
@@ -250,13 +249,13 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                                 builder.show();
 
                             }
-                        }else {
-                            Toast.makeText(ForgetPasswordActivity.this, R.string.you_have_not_answer_seciurty_questions, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ForgetPasswordActivity.this, getString(R.string.you_have_not_answer_seciurty_questions), Toast.LENGTH_SHORT).show();
 
                         }
 
                     } else {
-                        Toast.makeText(ForgetPasswordActivity.this, R.string.this_phone_not_exist, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgetPasswordActivity.this, getString(R.string.this_phone_not_exist), Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -269,11 +268,10 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 }
             });
 
-        }else {
+        } else {
 
-            Toast.makeText(this, R.string.please_complete_the_form, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.please_complete_the_form), Toast.LENGTH_SHORT).show();
         }
-
 
 
     }

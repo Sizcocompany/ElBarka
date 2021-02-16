@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.elbarka.Admin.AdminCategoryActivity;
 import com.example.elbarka.Admin.AdminMaintainProductsActivity;
+
 import com.example.elbarka.Model.Products;
 import com.example.elbarka.Prevalent.Prevalent;
 import com.example.elbarka.R;
@@ -71,7 +72,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         Paper.init(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.home);
+        toolbar.setTitle(getString(R.string.home));
         setSupportActionBar(toolbar);
 
 
@@ -119,7 +120,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(Home2Activity.this);
         recyclerView.setLayoutManager(layoutManager);
 
 
@@ -219,7 +220,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         super.onStart();
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"), Products.class)
+                        .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"),Products.class)
                         .build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
@@ -227,9 +228,9 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
 
-                        productViewHolder.txtProductName.setText(products.getpName());
+                        productViewHolder.txtProductName.setText(products.getPname());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText(R.string.total_price + products.getPrice() + "$");
+                        productViewHolder.txtProductPrice.setText(getString(R.string.total_price) + products.getPrice() + "$");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
 
                         productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -282,8 +283,8 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
             finish();
         } else {
             new AlertDialog.Builder(this)
-                    .setTitle(R.string.really_exit)
-                    .setMessage(this.getResources().getString(R.string.are_you_sure_you_want_to_exit))
+                    .setTitle(getString(R.string.really_exit))
+                    .setMessage(getString(R.string.are_you_sure_you_want_to_exit))
                     .setNegativeButton(android.R.string.no, null)
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

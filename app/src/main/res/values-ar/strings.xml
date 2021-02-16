@@ -22,7 +22,7 @@
     <string name="delete_this_product" translatable="false">حذف هذا المنتج</string>
     <string name="new_orders" translatable="false">طلبات جديدة</string>
     <string name="products_details" translatable="false">تفاصيل المنتجات</string>
-    <string name="total_price" translatable="false">السعر الإجمالي =</string>
+    <string name="total_price" translatable="false">السعر الإجمالي = </string>
     <string name="congratulation_your_final_order_has_been_placed_successfully_soon_it_will_be_verified" translatable="false">تهانينا ، لقد تم تقديم طلبك النهائي بنجاح ، وسيتم التحقق منه قريبًا</string>
     <string name="next" translatable="false">التالي</string>
     <string name="please_write_your_shipment_details" translatable="false"> يرجى كتابة تفاصيل شحنتك</string>

@@ -66,7 +66,7 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(searchRef.orderByChild("pName").startAt(searchInpute), Products.class)
+                        .setQuery(searchRef.orderByChild("pname").startAt(searchInpute), Products.class)
                         .build();
 
         // we add startAt to show all items in search start with first charcter like when we write i search result ( islam , iphone ect )
@@ -76,9 +76,9 @@ public class SearchProductsActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
 
-                        productViewHolder.txtProductName.setText(products.getpName());
+                        productViewHolder.txtProductName.setText(products.getPname());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText(R.string.price + products.getPrice() + "$");
+                        productViewHolder.txtProductPrice.setText(getString(R.string.price )+ products.getPrice() + "$");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
 
                         productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {

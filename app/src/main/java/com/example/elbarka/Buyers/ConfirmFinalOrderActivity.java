@@ -37,7 +37,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         // recieve total price from cart activity sent in intent
         totalAmount = getIntent().getStringExtra("Total Price");
-        Toast.makeText(this, R.string.total_price + totalAmount, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.total_price) + totalAmount, Toast.LENGTH_SHORT).show();
 
         nameEditText = findViewById(R.id.shapment_name);
         phoneEditText = findViewById(R.id.shapment_phoneNumber);

@@ -59,8 +59,8 @@ public class AdmineUserProductsActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull Cart cart) {
 
-                        holder.txtProductQuantity.setText(R.string.quantity+ cart.getQuantity());
-                        holder.txtProductPrice.setText(R.string.price + cart.getPrice() + " LE");
+                        holder.txtProductQuantity.setText(getString(R.string.quantity)+ cart.getQuantity());
+                        holder.txtProductPrice.setText(getString(R.string.price) + cart.getPrice() + " LE");
                         holder.txtProductName.setText(cart.getPname());
 
                     }

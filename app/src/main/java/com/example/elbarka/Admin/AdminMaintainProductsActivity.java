@@ -27,8 +27,9 @@ import java.util.HashMap;
 
 public class AdminMaintainProductsActivity extends AppCompatActivity {
 
-    private EditText name , price , description ;
-    private Button applyChangeBtn , deleteProductBtn ; ;
+    private EditText name, price, description;
+    private Button applyChangeBtn, deleteProductBtn;
+    ;
     private ImageView productImageView;
 
     // add string to recieve ID in it from home Activity in intent action like we do in another activity
@@ -52,7 +53,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         description = findViewById(R.id.product_description_Maintain);
         productImageView = findViewById(R.id.product_image_Maintain);
         deleteProductBtn = findViewById(R.id.delete_product_Btn);
-        
+
 
         applyChangeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,14 +77,14 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(AdminMaintainProductsActivity.this);
-                builder.setTitle(R.string.are_you_sure);
+                builder.setTitle(getString(R.string.are_you_sure));
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // if 0 which means admin press yes
-                        if(which == 0 ){
+                        if (which == 0) {
                             deleteThisProduct();
-                        }else {
+                        } else {
                             finish();
                         }
                     }
@@ -99,12 +100,12 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                Intent intent = new Intent(AdminMaintainProductsActivity.this , AdminCategoryActivity.class);
+                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
                 startActivity(intent);
                 // to don't let custome go back again
                 finish();
 
-                Toast.makeText(AdminMaintainProductsActivity.this, R.string.product_deleted_successfully, Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminMaintainProductsActivity.this, getString(R.string.product_deleted_successfully), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -114,53 +115,51 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
         // now we will get data from fields
 
-       String pName = name.getText().toString();
-       String pPrice = price.getText().toString();
-       String pDescription = description.getText().toString();
+        String pName = name.getText().toString();
+        String pPrice = price.getText().toString();
+        String pDescription = description.getText().toString();
 
-       if(pName.equals("")){
+        if (pName.equals("")) {
 
-           Toast.makeText(this, R.string.please_add_product_name, Toast.LENGTH_SHORT).show();
-       }else if(pPrice.equals("")){
+            Toast.makeText(this, getString(R.string.please_add_product_name), Toast.LENGTH_SHORT).show();
+        } else if (pPrice.equals("")) {
 
-           Toast.makeText(this, R.string.please_add_product_price, Toast.LENGTH_SHORT).show();
-       }else if(pDescription.equals("")){
+            Toast.makeText(this, getString(R.string.please_add_product_price), Toast.LENGTH_SHORT).show();
+        } else if (pDescription.equals("")) {
 
-           Toast.makeText(this, R.string.please_add_product_description, Toast.LENGTH_SHORT).show();
-       }else {
+            Toast.makeText(this, getString(R.string.please_add_product_description), Toast.LENGTH_SHORT).show();
+        } else {
 
-           // now we will save change with hashmap as we done in admin add new product activity under saveProductInfoToDataBase()
+            // now we will save change with hashmap as we done in admin add new product activity under saveProductInfoToDataBase()
 
-           HashMap<String, Object> productMap = new HashMap<>();
+            HashMap<String, Object> productMap = new HashMap<>();
 
-           productMap.put( "pid" , productID );
-           productMap.put( "pName" , pName );
-           productMap.put( "description" , pDescription );
-           productMap.put( "price" , pPrice );
+            productMap.put("pid", productID);
+            productMap.put("pname", pName);
+            productMap.put("description", pDescription);
+            productMap.put("price", pPrice);
 
-           productRef.updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-               @Override
-               public void onComplete(@NonNull Task<Void> task) {
-                   
-                   if(task.isSuccessful()){
+            productRef.updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
 
-                       Toast.makeText(AdminMaintainProductsActivity.this, R.string.changes_applied_successfully, Toast.LENGTH_SHORT).show();
+                    if (task.isSuccessful()) {
 
-                       Intent intent = new Intent(AdminMaintainProductsActivity.this , AdminCategoryActivity.class);
-                       startActivity(intent);
-                       // to can't go back again
-                       finish();
-                       
-                   }else {
-                       
-                       
-                   }
+                        Toast.makeText(AdminMaintainProductsActivity.this, getString(R.string.changes_applied_successfully), Toast.LENGTH_SHORT).show();
 
-               }
-           });
-       }
+                        Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
+                        startActivity(intent);
+                        // to can't go back again
+                        finish();
+
+                    } else {
 
 
+                    }
+
+                }
+            });
+        }
 
 
     }
@@ -169,13 +168,12 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
         productRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
-            {
-                if(snapshot.exists()){
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
 
                     // now will retriv data like we written in adminAddNewProductActivity in method saveProductInfoToDataBase()
 
-                    String pName = snapshot.child("pName").getValue().toString();
+                    String pName = snapshot.child("pname").getValue().toString();
                     String pPrice = snapshot.child("price").getValue().toString();
                     String pDescription = snapshot.child("description").getValue().toString();
                     String pImage = snapshot.child("image").getValue().toString();

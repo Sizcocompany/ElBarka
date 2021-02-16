@@ -22,7 +22,7 @@
     <string name="delete_this_product" translatable="false">Delete this Product</string>
     <string name="new_orders" translatable="false">New Orders</string>
     <string name="products_details" translatable="false">Products Details</string>
-    <string name="total_price" translatable="false">Total Price =</string>
+    <string name="total_price" translatable="false">Total Price = </string>
     <string name="congratulation_your_final_order_has_been_placed_successfully_soon_it_will_be_verified" translatable="false">Congratulation , your final order has been placed successfully , soon it will be verified</string>
     <string name="next" translatable="false">Next</string>
     <string name="please_write_your_shipment_details" translatable="false">Please write your shipment Details</string>
