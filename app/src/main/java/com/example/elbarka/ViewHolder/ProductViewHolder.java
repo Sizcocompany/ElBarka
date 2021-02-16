@@ -13,28 +13,28 @@ import com.example.elbarka.R;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-  public TextView txtProductName , txtProductDescription , txtProductPrice  ;
-   public ImageView imageViewProduct;
-   public ItemClickListner listner;
+    public TextView txtProductName, txtProductDescription, txtProductPrice;
+    public ImageView imageViewProduct;
+    public ItemClickListner listner;
 
 
     public ProductViewHolder(@NonNull View itemView) {
-        super( itemView );
+        super(itemView);
 
-        imageViewProduct = itemView.findViewById( R.id.seller_product_image);
-        txtProductName = itemView.findViewById( R.id.seller_product_name_details);
-        txtProductDescription = itemView.findViewById( R.id.seller_product_description);
-        txtProductPrice = itemView.findViewById( R.id.seller_product_price);
+        imageViewProduct = itemView.findViewById(R.id.seller_product_image);
+        txtProductName = itemView.findViewById(R.id.seller_product_name_details);
+        txtProductDescription = itemView.findViewById(R.id.seller_product_description);
+        txtProductPrice = itemView.findViewById(R.id.seller_product_price);
     }
 
-        public void setItemClickListner (ItemClickListner  listner){
-
-            this.listner = listner ;
-        }
+//    public void setItemClickListner(ItemClickListner listner) {
+//
+//        this.listner = listner;
+//    }
 
     @Override
     public void onClick(View view) {
 
-        listner.onClick( view , getAdapterPosition() , false );
+        listner.onClick(view, getAdapterPosition(), false);
     }
 }

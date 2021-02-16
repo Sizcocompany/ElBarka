@@ -139,7 +139,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText( this, R.string.error+" "+R.string.please_try_again_later, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.error)+" "+getString(R.string.please_try_again_later), Toast.LENGTH_SHORT ).show();
 
             // refresh activity
             startActivity( new Intent(SettingsActivity.this , SettingsActivity.class) );
@@ -152,14 +152,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty( fullNameEditeText.getText().toString() )){
 
-            Toast.makeText( this, R.string.name_is_mandatory, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.name_is_mandatory), Toast.LENGTH_SHORT ).show();
         }else if(TextUtils.isEmpty( userPhoneEditeText.getText().toString() )){
 
-            Toast.makeText( this, R.string.phone_is_mandatory, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.phone_is_mandatory), Toast.LENGTH_SHORT ).show();
 
         }else if(TextUtils.isEmpty( addressEditeText.getText().toString() )){
 
-            Toast.makeText( this, R.string.address_is_mandatory, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.address_is_mandatory), Toast.LENGTH_SHORT ).show();
         }else if(checker.equals( "clicked" )){
 
             uploadImage();
@@ -171,8 +171,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog( this );
 
-        progressDialog.setTitle(R.string.update_profile);
-        progressDialog.setMessage(this.getResources().getString(R.string.please_wait_while_updating_your_account_info) );
+        progressDialog.setTitle(getString(R.string.update_profile));
+        progressDialog.setMessage(getString(R.string.please_wait_while_updating_your_account_info) );
         progressDialog.setCanceledOnTouchOutside( false );
         progressDialog.show();
 
@@ -217,21 +217,21 @@ public class SettingsActivity extends AppCompatActivity {
                             progressDialog.dismiss();
 
                             startActivity( new Intent(SettingsActivity.this , Home2Activity.class) );
-                            Toast.makeText( SettingsActivity.this, R.string.profile_info_updated_sucssfully, Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( SettingsActivity.this, getString(R.string.profile_info_updated_sucssfully), Toast.LENGTH_SHORT ).show();
 
                             finish();
 
                         }else {
 
                             progressDialog.dismiss();
-                            Toast.makeText( SettingsActivity.this, R.string.error+" "+R.string.please_try_again_later, Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( SettingsActivity.this, getString(R.string.error)+" "+getString(R.string.please_try_again_later), Toast.LENGTH_SHORT ).show();
                         }
                     }
                 } );
 
         }else {
 
-            Toast.makeText( this, R.string.image_is_not_selected, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.image_is_not_selected), Toast.LENGTH_SHORT ).show();
         }
     }
 
@@ -248,7 +248,7 @@ public class SettingsActivity extends AppCompatActivity {
         ref.child( Prevalent.currentOnlineUsers.getPhone()).updateChildren( hashMap );
 
         startActivity( new Intent(SettingsActivity.this , Home2Activity.class) );
-        Toast.makeText( SettingsActivity.this, R.string.profile_info_updated_sucssfully, Toast.LENGTH_SHORT ).show();
+        Toast.makeText( SettingsActivity.this, getString(R.string.profile_info_updated_sucssfully), Toast.LENGTH_SHORT ).show();
 
         finish();
 

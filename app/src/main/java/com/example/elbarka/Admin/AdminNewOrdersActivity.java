@@ -56,11 +56,11 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, int position, @NonNull AdminOrders model) {
 
 
-                        holder.userName.setText(R.string.user_name + model.getName());
-                        holder.userPhone.setText(R.string.phone_number + model.getPhone());
-                        holder.userShippingAddress.setText(R.string.shipping_address+ model.getAddress() +" , " + model.getCity());
-                        holder.userDateTime.setText(R.string.order_at + model.getDate() +"   " +  model.getTime());
-                        holder.userTotalPrice.setText(R.string.total_price + model.getTotalAmount());
+                        holder.userName.setText(getString(R.string.user_name) + model.getName());
+                        holder.userPhone.setText(getString(R.string.phone_number) + model.getPhone());
+                        holder.userShippingAddress.setText(getString(R.string.shipping_address)+ model.getAddress() +" , " + model.getCity());
+                        holder.userDateTime.setText(getString(R.string.order_at) + model.getDate() +"   " +  model.getTime());
+                        holder.userTotalPrice.setText(getString(R.string.total_price) + model.getTotalAmount());
 
                         holder.showOrdersBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -86,7 +86,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                                 };
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(AdminNewOrdersActivity.this);
-                                builder.setTitle(R.string.have_you_shipped_this_order_products );
+                                builder.setTitle(getString(R.string.have_you_shipped_this_order_products) );
                                 builder.setItems(options, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

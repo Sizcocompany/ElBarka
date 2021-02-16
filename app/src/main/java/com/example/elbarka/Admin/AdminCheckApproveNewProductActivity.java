@@ -27,9 +27,9 @@ import com.squareup.picasso.Picasso;
 public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager ;
+    RecyclerView.LayoutManager layoutManager;
 
-    private DatabaseReference unApprovedProductsRef ;
+    private DatabaseReference unApprovedProductsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,10 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.SellersHomePendingProduct_checklist);
         recyclerView.setHasFixedSize(true);
-        layoutManager =  new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        unApprovedProductsRef = FirebaseDatabase.getInstance().getReference().child("Sellersproducts");
+        unApprovedProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
     }
 
@@ -51,61 +51,62 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
         // now we will retrive all not approve products and add it in recycler view
         FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
-         .setQuery(unApprovedProductsRef.orderByChild("productState").equalTo("Not Approved") , Products.class)
+                .setQuery(unApprovedProductsRef.orderByChild("productState").equalTo("Not Approved"), Products.class)
                 .build();
 
         // will use recycler adapter to retrive all products from database
-        FirebaseRecyclerAdapter<Products , ProductViewHolder> adapter =
+        FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int i, @NonNull Products model) {
 
-                        holder.txtProductName.setText(model.getpName());
+                        holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText(R.string.price+ model.getPrice() + "$");
+                        holder.txtProductPrice.setText(getString(R.string.price) + model.getPrice() + "$");
                         Picasso.get().load(model.getImage()).into(holder.imageViewProduct);
 
                         // now when admin press on this item we will have dialog to approve or reject this order
 
-                     holder.itemView.setOnClickListener(new View.OnClickListener() {
-                         @Override
-                         public void onClick(View v) {
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
 
-                             // SHOW DIALOG FOR ADMIN
-                             final String productID = model.getPid();
+                                // SHOW DIALOG FOR ADMIN
+                                final String productID = model.getPid();
 
-                             CharSequence options[] = new CharSequence[]{
+                                CharSequence options[] = new CharSequence[]{
 
-                                     // show options to admin
+                                        // show options to admin
 
-                                     "Yes",
-                                     "No"
-                             };
-                             AlertDialog.Builder builder = new AlertDialog.Builder(AdminCheckApproveNewProductActivity.this);
-                             builder.setTitle(R.string.do_you_want_to_approve_this_product);
-                             builder.setItems(options, new DialogInterface.OnClickListener() {
-                                 @Override
-                                 public void onClick(DialogInterface dialog, int position) {
+                                        "Yes",
+                                        "No"
+                                };
+                                AlertDialog.Builder builder = new AlertDialog.Builder(AdminCheckApproveNewProductActivity.this);
+                                builder.setTitle(getString(R.string.do_you_want_to_approve_this_product));
+                                builder.setItems(options, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int position) {
 
-                                     // if customer press yes which mean index 0 in array
+                                        // if customer press yes which mean index 0 in array
 
-                                     if(position == 0 ){
+                                        if (position == 0) {
 
-                                         changeProductSatat(productID);
+                                            changeProductSatat(productID);
 
-                                     }if(position == 1 ){
-
-
-                                     }
+                                        }
+                                        if (position == 1) {
 
 
-                                 }
-                             });
+                                        }
 
-                             builder.show();
-                         }
-                     });
+
+                                    }
+                                });
+
+                                builder.show();
+                            }
+                        });
 
                     }
 
@@ -126,17 +127,21 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
     private void changeProductSatat(String productID) {
 
         // now if custome press yes we wil change product state to approved
-        unApprovedProductsRef.child(productID).child("productState").setValue("Approved").addOnCompleteListener(new OnCompleteListener<Void>() {
+        unApprovedProductsRef
+                .child(productID)
+                .child("productState")
+                .setValue("Approved")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
 
-                    Toast.makeText(AdminCheckApproveNewProductActivity.this, R.string.product_approved_successfully, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminCheckApproveNewProductActivity.this, getString(R.string.product_approved_successfully), Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
-                    Toast.makeText(AdminCheckApproveNewProductActivity.this, R.string.please_try_again_later, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminCheckApproveNewProductActivity.this, getString(R.string.please_try_again_later), Toast.LENGTH_SHORT).show();
                 }
 
             }

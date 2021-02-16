@@ -68,17 +68,17 @@ public class Register_Activity extends AppCompatActivity {
 
         if(TextUtils.isEmpty( name ))
         {
-            Toast.makeText( this, R.string.please_enter_user_name, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.please_enter_user_name), Toast.LENGTH_SHORT ).show();
         }else if (TextUtils.isEmpty( phone ))
         {
-            Toast.makeText( this, R.string.please_enter_user_phone, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.please_enter_user_phone), Toast.LENGTH_SHORT ).show();
         }else if (TextUtils.isEmpty( password ))
         {
-            Toast.makeText( this, R.string.please_enter_user_password, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this, getString(R.string.please_enter_user_password), Toast.LENGTH_SHORT ).show();
         }else{
 
-            loadingBar.setTitle(R.string.create_account);
-            loadingBar.setMessage(this.getResources().getString(R.string.please_wait_while_check_credantials) );
+            loadingBar.setTitle(getString(R.string.create_account));
+            loadingBar.setMessage(getString(R.string.please_wait_while_check_credantials) );
             loadingBar.setCanceledOnTouchOutside( false );
             loadingBar.show();
 
@@ -115,7 +115,7 @@ public class Register_Activity extends AppCompatActivity {
 
                                     if(task.isSuccessful()){
 
-                                            Toast.makeText( Register_Activity.this, R.string.congratulations_your_account_has_been_created, Toast.LENGTH_SHORT ).show();
+                                            Toast.makeText( Register_Activity.this, getString(R.string.congratulations_your_account_has_been_created), Toast.LENGTH_SHORT ).show();
                                             loadingBar.dismiss();
 
                                             Intent intent = new Intent(Register_Activity.this , LoginActivity.class);
@@ -125,7 +125,7 @@ public class Register_Activity extends AppCompatActivity {
                                     else {
 
                                         loadingBar.dismiss();
-                                        Toast.makeText( Register_Activity.this, R.string.network_error_please_try_again_later, Toast.LENGTH_SHORT ).show();
+                                        Toast.makeText( Register_Activity.this, getString(R.string.network_error_please_try_again_later), Toast.LENGTH_SHORT ).show();
                                     }
                                 }
                             } );
@@ -134,9 +134,9 @@ public class Register_Activity extends AppCompatActivity {
                 // if this phone number is exsits in database
                 else {
 
-                    Toast.makeText( Register_Activity.this, R.string.this_ + phone + R.string.already_exists, Toast.LENGTH_SHORT ).show();
+                    Toast.makeText( Register_Activity.this, getString(R.string.this_) + phone + getString(R.string.already_exists), Toast.LENGTH_SHORT ).show();
                     loadingBar.dismiss();
-                    Toast.makeText( Register_Activity.this, R.string.please_use_another_phone_number, Toast.LENGTH_SHORT ).show();
+                    Toast.makeText( Register_Activity.this, getString(R.string.please_use_another_phone_number), Toast.LENGTH_SHORT ).show();
 
                     Intent intent = new Intent(Register_Activity.this , MainActivity.class);
                     startActivity( intent );

@@ -65,7 +65,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
 
                 if(state.equals("Order placed") || state.equals("Order shipped")){
 
-                    Toast.makeText(ProductdetailsActivity.this, R.string.you_can_purchase_new_order_once_your_order_shipped_or_confirmed, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductdetailsActivity.this, getString(R.string.you_can_purchase_new_order_once_your_order_shipped_or_confirmed), Toast.LENGTH_SHORT).show();
 
                 }else {
                     // TO ADD PRODUCT TO CART
@@ -126,7 +126,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    Toast.makeText(ProductdetailsActivity.this, R.string.add_to_the_cart_list, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ProductdetailsActivity.this, getString(R.string.add_to_the_cart_list), Toast.LENGTH_SHORT).show();
 
                                     Intent intent = new Intent(ProductdetailsActivity.this , Home2Activity.class);
                                     startActivity(intent);
@@ -149,7 +149,7 @@ public class ProductdetailsActivity extends AppCompatActivity {
 
                     Products products = snapshot.getValue(Products.class);
 
-                    product_name.setText(products.getpName());
+                    product_name.setText(products.getPname());
                     product_Description.setText(products.getDescription());
                     product_Price.setText(products.getPrice());
                     Picasso.get().load(products.getImage()).into(product_Image);

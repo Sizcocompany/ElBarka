@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
                 allowAccessToAccount(userPhoneKey, userPasswordKey);
 
-                loadingBar.setTitle(R.string.already_logged_in);
-                loadingBar.setMessage(this.getResources().getString(R.string.please_wait));
+                loadingBar.setTitle(getString(R.string.already_logged_in));
+                loadingBar.setMessage(getString(R.string.please_wait));
                 loadingBar.setCanceledOnTouchOutside(false);
                 loadingBar.show();
             }

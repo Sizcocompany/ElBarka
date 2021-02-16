@@ -27,10 +27,10 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         txtProductPrice = itemView.findViewById( R.id.seller_product_price);
     }
 
-    public void setItemClickListner (ItemClickListner  listner){
-
-        this.listner = listner ;
-    }
+//    public void setItemClickListner (ItemClickListner  listner){
+//
+//        this.listner = listner ;
+//    }
 
     @Override
     public void onClick(View view) {
