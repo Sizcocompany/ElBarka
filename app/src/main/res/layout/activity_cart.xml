@@ -67,6 +67,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_margin="30dp"
+        android:background="@drawable/buttons"
         />
 
 </RelativeLayout>

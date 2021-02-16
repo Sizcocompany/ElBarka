@@ -16,7 +16,7 @@
     <string name="logout" translatable="false">logout</string>
     <string name="approve_new_products" translatable="false">Approve new Products</string>
     <string name="welcome_dear_admin" translatable="false">Welcome Dear admin</string>
-    <string name="check_orders" translatable="false">check Orders</string>
+    <string name="check_orders" translatable="false">Check Orders</string>
     <string name="check_and_approve_new_products" translatable="false">Check and Approve New Products</string>
     <string name="apply_changes" translatable="false">Apply changes</string>
     <string name="delete_this_product" translatable="false">Delete this Product</string>
@@ -125,8 +125,8 @@
     <string name="your_hero">Your Hero .. ?</string>
     <string name="quantity">Quantity = </string>
     <string name="price">Price = </string>
-    <string name="shipping_address">Shipping address</string>
-    <string name="order_at">Order at </string>
+    <string name="shipping_address">Shipping address : </string>
+    <string name="order_at">Order at : </string>
     <string name="dear">Dear </string>
     <string name="order_is_shipped_successfully">Order is shipped successfully</string>
     <string name="congratulation_your_final_order_has_been_shipped_successfully_soon_will_received_your_order_your_location">Congratulation , your final order has been shipped successfully , soon will received your order your location</string>

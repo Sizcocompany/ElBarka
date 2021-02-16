@@ -62,7 +62,7 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText(getString(R.string.price) + model.getPrice() + "$");
+                        holder.txtProductPrice.setText(getString(R.string.price) + model.getPrice() + "LE");
                         Picasso.get().load(model.getImage()).into(holder.imageViewProduct);
 
                         // now when admin press on this item we will have dialog to approve or reject this order
@@ -126,7 +126,7 @@ public class AdminCheckApproveNewProductActivity extends AppCompatActivity {
 
     private void changeProductSatat(String productID) {
 
-        // now if custome press yes we wil change product state to approved
+        // now if customer press yes we wil change product state to approved
         unApprovedProductsRef
                 .child(productID)
                 .child("productState")

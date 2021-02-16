@@ -216,7 +216,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("pname", productName);
         productMap.put("description", description);
         productMap.put("price", price);
-        productMap.put("productState", "Not Approved");
+//        productMap.put("productState", "Not Approved");
+        productMap.put("productState", "Approved");
 
 
         productRef.child(productRandomKey).updateChildren(productMap).

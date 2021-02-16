@@ -125,8 +125,8 @@
     <string name="your_hero">من هو بطلك</string>
     <string name="quantity">الكمية = </string>
     <string name="price">السعر = </string>
-    <string name="shipping_address">عنوان الشحن</string>
-    <string name="order_at">طلب في</string>
+    <string name="shipping_address">عنوان الشحن: </string>
+    <string name="order_at">طلب في: </string>
     <string name="dear">عزيزي</string>
     <string name="order_is_shipped_successfully">تم شحن الطلب بنجاح</string>
     <string name="congratulation_your_final_order_has_been_shipped_successfully_soon_will_received_your_order_your_location">تهانينا ، لقد تم شحن طلبك النهائي بنجاح ، وسيتلقى طلبك قريبًا موقعك</string>

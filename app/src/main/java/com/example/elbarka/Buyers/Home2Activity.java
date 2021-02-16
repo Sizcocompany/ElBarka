@@ -230,7 +230,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
                         productViewHolder.txtProductName.setText(products.getPname());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText(getString(R.string.total_price) + products.getPrice() + "$");
+                        productViewHolder.txtProductPrice.setText(getString(R.string.total_price) + products.getPrice() + "LE");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
 
                         productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {

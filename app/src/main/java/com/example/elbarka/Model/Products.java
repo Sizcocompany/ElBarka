@@ -2,7 +2,7 @@ package com.example.elbarka.Model;
 
 public class Products {
 
-    // make sure that you add same name in data base when added new parameter
+    // make sure that you add same name in data base when added new parameter and must be same arrange 
 //     private String pName , description , price  , image , category , pid , time , date , productState  ;
     private String category, date, description, image, pid, pname, price, time, productState;
 
