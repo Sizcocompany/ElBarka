@@ -23,6 +23,7 @@
         android:textStyle="bold"
         android:textSize="18sp"
         android:background="@color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:padding="9dp"
         android:layout_marginStart="10dp"
         android:layout_centerVertical="true"
