@@ -190,7 +190,6 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
             // this is to allow only users to access this
             if (!type.equals("Admin")) {
 
-
             }
 
             Intent intent = new Intent(Home2Activity.this, SettingsActivity.class);
