@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,9 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
     private AppBarConfiguration mAppBarConfiguration;
 
 
+    private ImageView nuts, honey, dates, baked;
+    private ImageView olive_oil, yamiesh, coffee;
+
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -57,6 +61,28 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Products products = new Products();
+        nuts = findViewById(R.id.user_nutes_image);
+        honey = findViewById(R.id.user_honey_image);
+        dates = findViewById(R.id.user_dates_image);
+        baked = findViewById(R.id.user_baked_image);
+        olive_oil = findViewById(R.id.user_olive_oil);
+        yamiesh = findViewById(R.id.user_yamiseh_image);
+        coffee = findViewById(R.id.user_coffee);
+
+        onClickCardviews(nuts , "nuts");
+
+        onClickCardviews(honey , "honey");
+        onClickCardviews(dates , "dates");
+
+        onClickCardviews(baked , "baked");
+
+        onClickCardviews(olive_oil , "olive_oil");
+
+        onClickCardviews(yamiesh , "yamiesh");
+
+        onClickCardviews(coffee , "coffee");
 
         // this  check to know if admin or user to provide it in case press on maintain btn
         // as of not added add will crash as user condition  not handel
@@ -118,10 +144,10 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
         }
 
-        recyclerView = findViewById(R.id.recycler_menu);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(Home2Activity.this);
-        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView = findViewById(R.id.recycler_menu);
+//        recyclerView.setHasFixedSize(true);
+//        layoutManager = new LinearLayoutManager(Home2Activity.this);
+//        recyclerView.setLayoutManager(layoutManager);
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -214,62 +240,62 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         return true;
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseRecyclerOptions<Products> options =
-                new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"),Products.class)
-                        .build();
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseRecyclerOptions<Products> options =
+//                new FirebaseRecyclerOptions.Builder<Products>()
+//                        .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"),Products.class)
+//                        .build();
+//
+//        FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
+//                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
+//                    @Override
+//                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
+//
+//                        productViewHolder.txtProductName.setText(products.getPname());
+//                        productViewHolder.txtProductDescription.setText(products.getDescription());
+//                        productViewHolder.txtProductPrice.setText(getString(R.string.total_price) + products.getPrice() + "LE");
+//                        Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
+//
+//                        productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                // in case press on any item we need to check if admin or nor by check string type
+//                                if (type.equals("Admin")) {
+//
+//                                    Intent intent = new Intent(Home2Activity.this, AdminMaintainProductsActivity.class);
+//                                    //to get spacific product ID inorder to view it
+//                                    intent.putExtra("pid", products.getPid());
+//                                    startActivity(intent);
+//
+//
+//                                } else {
+//
+//                                    Intent intent = new Intent(Home2Activity.this, ProductdetailsActivity.class);
+//                                    //to get spacific product ID inorder to view it
+//                                    intent.putExtra("pid", products.getPid());
+//
+//                                    startActivity(intent);
+//                                }
+//
+//                            }
+//                        });
+//
+//                    }
+//
+//                    @NonNull
+//                    @Override
+//                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
+//                        ProductViewHolder holder = new ProductViewHolder(view);
+//                        return holder;
+//                    }
+//                };
 
-        FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
-
-                        productViewHolder.txtProductName.setText(products.getPname());
-                        productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText(getString(R.string.total_price) + products.getPrice() + "LE");
-                        Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
-
-                        productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                // in case press on any item we need to check if admin or nor by check string type
-                                if (type.equals("Admin")) {
-
-                                    Intent intent = new Intent(Home2Activity.this, AdminMaintainProductsActivity.class);
-                                    //to get spacific product ID inorder to view it
-                                    intent.putExtra("pid", products.getPid());
-                                    startActivity(intent);
-
-
-                                } else {
-
-                                    Intent intent = new Intent(Home2Activity.this, ProductdetailsActivity.class);
-                                    //to get spacific product ID inorder to view it
-                                    intent.putExtra("pid", products.getPid());
-
-                                    startActivity(intent);
-                                }
-
-                            }
-                        });
-
-                    }
-
-                    @NonNull
-                    @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
-                        ProductViewHolder holder = new ProductViewHolder(view);
-                        return holder;
-                    }
-                };
-
-        recyclerView.setAdapter(adapter);
-        adapter.startListening();
-    }
+//        recyclerView.setAdapter(adapter);
+//        adapter.startListening();
+   // }
 
     @Override
     public void onBackPressed() {
@@ -300,6 +326,23 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+
+    // create one method when customer press in ( image view ) send to user show catagry page to show the category
+    // which choose ( we will add the category name in string  )
+    public void onClickCardviews(ImageView cardView, final String string) {
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intent = new Intent(Home2Activity.this , User_showCategoryActivity.class);
+                intent.putExtra("category" , string);
+                startActivity(intent);
+            }
+        });
+
+    }
+
 
 }
 

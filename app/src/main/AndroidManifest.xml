@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.elbarka">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ElBarka.NoActionBar"
-        tools:replace="android:icon,android:theme"
-        >
-
-        <activity android:name=".Admin.AdminCheckApproveNewProductActivity"></activity>
+        tools:replace="android:icon,android:theme">
+        <activity android:name=".Buyers.User_showCategoryActivity"></activity>
+        <activity android:name=".Admin.AdminCheckApproveNewProductActivity" />
         <activity android:name=".Admin.AdminHomeActivity" />
         <activity android:name=".Buyers.ForgetPasswordActivity" />
         <activity android:name=".Admin.AdminMaintainProductsActivity" />
@@ -33,8 +31,7 @@
         <activity android:name=".Admin.AdminAddNewProductActivity" />
         <activity android:name=".Buyers.Register_Activity" />
         <activity android:name=".Buyers.LoginActivity" />
-        <activity android:name=".Buyers.MainActivity"/>
-
+        <activity android:name=".Buyers.MainActivity" />
         <activity android:name=".Buyers.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,13 +42,10 @@
         <activity
             android:name=".Buyers.Home2Activity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ElBarka.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.ElBarka.NoActionBar"></activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-
-        </application>
+    </application>
 
 </manifest>

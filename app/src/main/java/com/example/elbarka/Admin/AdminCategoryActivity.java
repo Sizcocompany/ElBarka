@@ -31,13 +31,13 @@ public class AdminCategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
 
-        nuts = findViewById(R.id.nutes_image);
-        honey = findViewById(R.id.honey_image);
-        dates = findViewById(R.id.dates_image);
-        baked = findViewById(R.id.baked_image);
-        olive_oil = findViewById(R.id.olive_oil);
-        yamiesh = findViewById(R.id.yamiseh_image);
-        coffee = findViewById(R.id.coffee);
+        nuts = findViewById(R.id.admin_nutes_image);
+        honey = findViewById(R.id.admin_honey_image);
+        dates = findViewById(R.id.admin_dates_image);
+        baked = findViewById(R.id.admin_baked_image);
+        olive_oil = findViewById(R.id.admin_olive_oil);
+        yamiesh = findViewById(R.id.admin_yamiseh_image);
+        coffee = findViewById(R.id.admin_coffee);
 //        shoes = findViewById( R.id.shoes );
 //        headPhone = findViewById( R.id.headphones_handfree);
 //        laptops = findViewById( R.id.laptop_PC);

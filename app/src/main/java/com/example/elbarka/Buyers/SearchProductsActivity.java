@@ -64,6 +64,8 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         DatabaseReference searchRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
+
+       // we will search with pname
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
                         .setQuery(searchRef.orderByChild("pname").startAt(searchInpute), Products.class)
@@ -74,14 +76,14 @@ public class SearchProductsActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int i, @NonNull Products products) {
 
-                        productViewHolder.txtProductName.setText(products.getPname());
-                        productViewHolder.txtProductDescription.setText(products.getDescription());
-                        productViewHolder.txtProductPrice.setText(getString(R.string.price )+ products.getPrice() + "LE");
-                        Picasso.get().load(products.getImage()).into(productViewHolder.imageViewProduct);
+                        holder.txtProductName.setText(products.getPname());
+                        holder.txtProductDescription.setText(products.getDescription());
+                        holder.txtProductPrice.setText(getString(R.string.price )+ products.getPrice() + "LE");
+                        Picasso.get().load(products.getImage()).into(holder.imageViewProduct);
 
-                        productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 

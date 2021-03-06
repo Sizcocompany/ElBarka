@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.elbarka.Prevalent.Prevalent;
 import com.example.elbarka.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,6 +54,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
+
 
         categoryName = getIntent().getExtras().get("category").toString();
         // create folder called product Images in fire store to store images
@@ -216,7 +218,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("pname", productName);
         productMap.put("description", description);
         productMap.put("price", price);
-//        productMap.put("productState", "Not Approved");
+        productMap.put("adminNumber" , Prevalent.currentOnlineUsers.getPhone());
         productMap.put("productState", "Approved");
 
 
