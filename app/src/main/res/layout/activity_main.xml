@@ -10,7 +10,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/app_logo"/>
+        android:src="@drawable/app_logo"
+        />
 
     <Button
         android:id="@+id/main_Join_now_btn"

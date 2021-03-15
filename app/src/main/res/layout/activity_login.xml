@@ -135,5 +135,23 @@
         android:layout_alignParentLeft="true"
         android:layout_marginRight="23dp" />
 
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/google_SignInBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/login_Password_inpute"-->
+<!--        android:background="@drawable/buttons"-->
+<!--        android:layout_marginLeft="17dp"-->
+<!--        android:layout_marginRight="17dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textSize="17sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textColorHint="@color/colorPrimaryDark"-->
+
+<!--        />-->
+
+
+
 </RelativeLayout>
 </ScrollView>
